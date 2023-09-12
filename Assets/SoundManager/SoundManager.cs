@@ -63,8 +63,13 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private BGMSoundData[] bgmSoundDatas;
 
+    // シングルトンのインスタンス
+    public static SoundManager instance;
+
     private void Awake()
     {
+        CheckInstance();
+
         // maxSoundTrack分のAudioSourceを格納
         audioSourceList = new AudioSource[maxSoundTrack];
 
@@ -291,6 +296,23 @@ public class SoundManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"その別名は登録されていません : {name}");
+        }
+    }
+
+    /// <summary>
+    /// 他のゲームオブジェクトにアタッチされているか調べる
+    /// アタッチされている場合は破棄する。
+    /// </summary>
+    void CheckInstance()
+    {
+        if(!instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if(instance != this)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
