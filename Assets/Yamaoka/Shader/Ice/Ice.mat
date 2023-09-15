@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ice
+  m_Shader: {fileID: 4800000, guid: 49441056ba245d24ebd4ff664526f99f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DisolveTex:
+        m_Texture: {fileID: 2800000, guid: 38a90c35a7e2ad34195580db11c4f916, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _IceNormalMap:
+        m_Texture: {fileID: 2800000, guid: ada103b41691ecb46b232005e5871d63, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _IceTex:
+        m_Texture: {fileID: 2800000, guid: 622a07893808469428cc8894df1bbd7c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _FreezeBorder: 0.05
+    - _FreezeRate: 1
+    - _FreezeRateMax: 1
+    - _IceNormalMapScale: 2
+    - _IceSpecularPower: 1
+    - _RimLightBorder: 0.3
+    - _SpecularPower: 1
+    m_Colors:
+    - _FreezeBorderColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _IceSpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _RimLightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ShadeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_BuildTextureStacks: []
