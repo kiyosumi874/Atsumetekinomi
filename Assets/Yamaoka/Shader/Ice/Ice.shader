@@ -31,14 +31,16 @@ Shader "Custom/Ice"
 
             #include "UnityCG.cginc"
 
-            struct appdata {
+            struct appdata
+            {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
                 float3 normal : NORMAL;
                 float4 tangent : TANGENT;
             };
 
-            struct v2f {
+            struct v2f
+            {
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
                 float3 normal : TEXCOORD1;
@@ -68,7 +70,8 @@ Shader "Custom/Ice"
             float _RimLightBorder;
             float3 _RimLightColor;
 
-            v2f vert(appdata v) {
+            v2f vert(appdata v)
+            {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
@@ -77,7 +80,7 @@ Shader "Custom/Ice"
 
                 o.normal = UnityObjectToWorldNormal(v.normal);
                 o.tangent = mul(unity_ObjectToWorld, v.tangent.xyz);
-                // binormalÇÕtangentÇÃwÇ∆unity_WorldTransformParams.wÇä|ÇØÇÈÅiUnityÇÃåàÇ‹ÇËÅj
+                // binormalÇÕtangentÇÃwÇ∆unity_WorldTransformParams.wÇä|ÇØÇÈ
                 o.binormal = normalize(cross(v.normal.xyz, v.tangent.xyz) * v.tangent.w * unity_WorldTransformParams.w);
                 o.binormal = mul(unity_ObjectToWorld, o.binormal);
 
@@ -87,7 +90,8 @@ Shader "Custom/Ice"
                 return o;
             }
 
-            fixed4 frag(v2f i) : SV_Target {
+            fixed4 frag(v2f i) : SV_Target
+            {
                 fixed4 col = tex2D(_MainTex, i.uv);
 
                 half3 halfDir = normalize(i.lightDir + i.viewDir);
