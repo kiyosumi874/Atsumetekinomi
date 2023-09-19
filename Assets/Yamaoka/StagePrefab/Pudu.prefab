@@ -250,7 +250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1816440426091492282}
   - component: {fileID: 5595684044370487139}
-  - component: {fileID: 1234259454589760069}
   m_Layer: 0
   m_Name: Mesh_LOD0
   m_TagString: Untagged
@@ -335,18 +334,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 6.9849193e-10, y: -0.0026330086, z: 0.0132713355}
     m_Extent: {x: 0.0071849767, y: 0.015359104, z: 0.013908608}
   m_DirtyAABB: 0
---- !u!114 &1234259454589760069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3296388380087036922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e5946a600cf124289678c3d7a98ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3736169778260441486
 GameObject:
   m_ObjectHideFlags: 0
