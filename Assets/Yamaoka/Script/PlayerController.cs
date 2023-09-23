@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public float moveSpeed = 15.0f;
     private Vector3 inputAxis;
+    public float moveForceMultiplier;    // 移動速度の入力に対する追従度
 
     private void Start()
     {
@@ -15,52 +16,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //inputAxis.x = Input.GetAxis("Horizontal");
-        //inputAxis.z = Input.GetAxis("Vertical");
-
-        //// Wキー（前方移動）
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    rb.velocity = transform.forward * moveSpeed;
-        //}
-
-        //// Sキー（後方移動）
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    rb.velocity = -transform.forward * moveSpeed;
-        //}
-
-        //// Dキー（右移動）
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    rb.velocity = transform.right * moveSpeed;
-        //}
-
-        //// Aキー（左移動）
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    rb.velocity = -transform.right * moveSpeed;
-        //}
+        inputAxis.x = Input.GetAxis("Horizontal");
+        inputAxis.z = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
     {
-        inputAxis.x = Input.GetAxis("Horizontal");
-        inputAxis.z = Input.GetAxis("Vertical");
         inputAxis.Normalize();
-        rb.AddForce(inputAxis * -moveSpeed);
-
-        //if(Input.GetKeyUp(KeyCode.A)
-        //    || Input.GetKeyUp(KeyCode.S)
-        //    || Input.GetKeyUp(KeyCode.D)
-        //    || Input.GetKeyUp(KeyCode.W))
-        //{
-        //    inputAxis = Vector3.zero;
-        //}
+        rb.AddForce(inputAxis * -moveSpeed * moveForceMultiplier);
     }
-
-    //private void FixedUpdate()
-    //{
-    //    rb.velocity = inputAxis.normalized * moveSpeed;
-    //}
 }
