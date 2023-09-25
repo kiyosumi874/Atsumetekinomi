@@ -44,11 +44,11 @@ public class PlayLimitTimer : MonoBehaviour
             {
                 remainingTime = 0;
             }
-            //UI変更
+            //UI更新
             timerText.gameObject.SetActive(true);
             timerText.text = remainingTime.ToString();
         }
-        else//遊んでいない時は隠す
+        else//遊んでいない時はテキストを隠す
         {
             timerText.gameObject.SetActive(false);
         }

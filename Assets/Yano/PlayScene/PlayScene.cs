@@ -7,10 +7,15 @@ using UnityEngine;
 /// </summary>
 public class PlayScene : MonoBehaviour
 {
-    /// <summary>
-    /// 遊んでいるときの処理段階
-    /// </summary>
+    // 遊んでいるときの処理段階
     static private PlaySceneState state = PlaySceneState.start;
+    //何かボタンを押してからゲーム開始まで数える
+    private Timer timer;
+    //ゲーム開始までに数える時間
+    private const float countDownNum = 5;
+    //次のシーンの名前
+    [SerializeField] private string nextSceneName;
+
     /// <summary>
     /// 段階によって処理変更
     /// </summary>
@@ -28,14 +33,25 @@ public class PlayScene : MonoBehaviour
                 EndProcess();
                 break;   
         }
-        Debug.Log(state);
     }
     /// <summary>
     /// ゲーム説明したらタイマー起動
     /// </summary>
     private void StartProcess()
     {
-        state = PlaySceneState.play;
+        if (timer == null) 
+        {
+            //なんか押されたら
+            if (Input.anyKey)
+            {
+                timer = new Timer(countDownNum);
+            } 
+        }
+        //カウントダウン終了時
+        else if(timer.IsCountDownEnd())
+        {
+            state = PlaySceneState.play; 
+        }
     }
     /// <summary>
     /// 遊んでいるときの処理
@@ -53,6 +69,7 @@ public class PlayScene : MonoBehaviour
     /// </summary>
     private void EndProcess()
     {
+        SceneChanger.Instance.LoadSceneFaded(nextSceneName);
     }
     /// <summary>
     /// 今何の処理をしているか
