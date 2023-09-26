@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Kinomi/KinomiData")]
 public class KinomiSourceData : ScriptableObject
 {
+    /// <summary>
+    /// –Ø‚ÌÀ‚Ì¶¬êŠ‚Ìƒf[ƒ^
+    /// </summary>
     public enum GenerationLocation
     {
         Near,    // ‘ƒ‚Ì‹ß‚­

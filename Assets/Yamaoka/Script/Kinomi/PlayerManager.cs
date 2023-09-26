@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerManager : MonoBehaviour
 {
@@ -12,13 +14,13 @@ public class PlayerManager : MonoBehaviour
     /// </summary>
     /// <param name="kinomiID">木の実のID</param>
     /// <param name="count">取得する個数</param>
-    public void CountKinomi(int kinomiID, int count)
+    public void CountKinomi(string kinomiName, int count)
     {
         // List内を検索
         for(int i = 0; i < kinomiDataList.Count; i++)
         {
             // IDが一致していたらカウント
-            if (kinomiDataList[i].id == kinomiID)
+            if (kinomiDataList[i].name == kinomiName)
             {
                 kinomiDataList[i].CountUp(count);
                 break;
@@ -26,7 +28,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         // IDが一致しなければアイテムを追加
-        KinomiData kinomiData = new KinomiData(kinomiID, count);
+        KinomiData kinomiData = new KinomiData(kinomiName, count);
         kinomiDataList.Add(kinomiData);
     }
 
