@@ -36,7 +36,7 @@ public class KinomiSourceData : ScriptableObject
     /// <summary>
     /// –Ø‚ÌÀ‚Ì¶¬êŠ
     /// </summary>
-    public GenerationLocation kinomiGenerationLocation
+    public GenerationLocation kinomiGeneratLocation
     {
         get { return location; }
     }
