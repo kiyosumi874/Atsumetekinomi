@@ -7,6 +7,7 @@ using UnityEngine.UI;
 /// <summary>
 /// 木の実データ
 /// </summary>
+[System.Serializable]
 public class KinomiData
 {
     public int id;      // 木の実ID
@@ -64,7 +65,11 @@ public class KinomiManager : MonoBehaviour
     public int orengeNum = 0;
     public int bananaNum = 0;
 
-    public static KinomiManager instance;
+    public bool hasApple = false;
+    public bool hasOrenge = false;
+    public bool hasBanana = false;
+
+    public static KinomiManager instance;   // インスタンス
 
     private void Awake()
     {
@@ -74,6 +79,8 @@ public class KinomiManager : MonoBehaviour
 
     private void Update()
     {
+        CheckHasKinomi();
+
         allKinomiNumText.text = nowKinomiNum.ToString();
         appleNumText.text = appleNum.ToString();
         orengeNumText.text = orengeNum.ToString();
@@ -127,6 +134,37 @@ public class KinomiManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 木の実を持っているかどうか検証
+    /// </summary>
+    public void CheckHasKinomi()
+    {
+        if(appleNum <= 0)
+        {
+            hasApple = false;
+        }
+        else
+        {
+            hasApple = true;
+        }
+        if(orengeNum <= 0)
+        {
+            hasOrenge = false;
+        }
+        else
+        {
+            hasOrenge = true;
+        }
+        if(bananaNum <= 0)
+        {
+            hasBanana = false;
+        }
+        else
+        {
+            hasBanana = true;
+        }
+    }
+
+    /// <summary>
     /// 木の実を取得
     /// </summary>
     /// <param name="kinomiID">木の実ID</param>
@@ -163,6 +201,8 @@ public class KinomiManager : MonoBehaviour
         Debug.Log(kinomiData.name + "を取得");
         Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
         nowKinomiNum++;
+
+        ComboManager.instance.CheckUseCombo();
     }
 
     /// <summary>

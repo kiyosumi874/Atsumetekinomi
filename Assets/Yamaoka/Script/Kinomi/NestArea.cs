@@ -12,6 +12,7 @@ public class NestArea : MonoBehaviour
         // エリアにプレイヤーが入ってきたら
         if(other.gameObject.tag == "Player")
         {
+            ComboManager.instance.UseCombo();
             KinomiManager.instance.LostAllKinomi();
         }
     }

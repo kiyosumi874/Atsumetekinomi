@@ -349,6 +349,68 @@ RectTransform:
   m_AnchoredPosition: {x: 847, y: 305}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &317969086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317969088}
+  - component: {fileID: 317969089}
+  m_Layer: 0
+  m_Name: ComboManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317969088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317969086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317969089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317969086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef672e8fd32794780a2cafe42e808a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comboDataList: []
+  comboDatas:
+  - comboName: "\u30EA\u30F3\u30B4\u30AA\u30EC\u30F3\u30B8"
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 0
+    isFrist: 1
+    useCombo: 0
+  - comboName: "\u30AA\u30EC\u30F3\u30B8\u30D0\u30CA\u30CA"
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 0
+    isFrist: 1
+    useCombo: 0
+  score: 0
+  scoreText: {fileID: 1974370581}
 --- !u!1 &445581822
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +605,7 @@ Transform:
   m_Children:
   - {fileID: 525620100}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &461169396
 GameObject:
@@ -649,7 +711,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinomiName: "\u30AA\u30EC\u30F3\u30B8"
   generatLocation: 2
-  kinomiManager: {fileID: 1024004763}
+  comboData:
+    comboName: 
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 1
+    isFrist: 1
+    useCombo: 0
+  score: 50
 --- !u!1 &508815255
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +1030,7 @@ Transform:
   - {fileID: 1811238261}
   - {fileID: 1475365453}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838806158
 GameObject:
@@ -1062,8 +1132,10 @@ RectTransform:
   - {fileID: 844952795}
   - {fileID: 525033081}
   - {fileID: 253114040}
+  - {fileID: 1612744204}
+  - {fileID: 1974370580}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1216,7 +1288,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1015949292 stripped
 GameObject:
@@ -1242,7 +1314,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinomiName: "\u30EA\u30F3\u30B4"
   generatLocation: 0
-  kinomiManager: {fileID: 1024004763}
+  comboData:
+    comboName: 
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 1
+    isFrist: 1
+    useCombo: 0
+  score: 50
 --- !u!1 &1024004760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1371,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d257913ae2adabd45996537149af7d7e, type: 2}
   - {fileID: 11400000, guid: b47fd3a47301cf043a10bd37f6febde6, type: 2}
   - {fileID: 11400000, guid: 76bd2ea748f9dca4cae05bac74b3c860, type: 2}
+  playerKinomiDataList: []
+  kinomiData:
+    id: 0
+    name: 
+    count: 0
   allKinomiNumText: {fileID: 1999389264}
   appleNumText: {fileID: 1538181639}
   orengeNumText: {fileID: 844952797}
@@ -1299,6 +1384,9 @@ MonoBehaviour:
   appleNum: 0
   orengeNum: 0
   bananaNum: 0
+  hasApple: 0
+  hasOrenge: 0
+  hasBanana: 0
 --- !u!1001 &1128841950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1380,7 +1468,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinomiName: "\u30EA\u30F3\u30B4"
   generatLocation: 0
-  kinomiManager: {fileID: 1024004763}
+  comboData:
+    comboName: 
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 1
+    isFrist: 1
+    useCombo: 0
+  score: 50
 --- !u!1 &1475365452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3297661481375659246, guid: bdc441544eb117d4d8f0f4bd49c2e4b7, type: 3}
@@ -1405,7 +1501,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinomiName: "\u30AA\u30EC\u30F3\u30B8"
   generatLocation: 2
-  kinomiManager: {fileID: 1024004763}
+  comboData:
+    comboName: 
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 1
+    isFrist: 1
+    useCombo: 0
+  score: 50
 --- !u!1001 &1521595325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1419,7 +1523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459323532006000210, guid: 458fc5cb241b7db46ae28064c3d467f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 127.998055
+      value: 131.38
       objectReference: {fileID: 0}
     - target: {fileID: 459323532006000210, guid: 458fc5cb241b7db46ae28064c3d467f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1427,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459323532006000210, guid: 458fc5cb241b7db46ae28064c3d467f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 113.92
+      value: 120.72
       objectReference: {fileID: 0}
     - target: {fileID: 459323532006000210, guid: 458fc5cb241b7db46ae28064c3d467f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1543,6 +1647,86 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 0
+--- !u!1 &1612744203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612744204}
+  - component: {fileID: 1612744206}
+  - component: {fileID: 1612744205}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1612744204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612744203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 838806162}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 194, y: -45}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1612744205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612744203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 300
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 5
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Score :'
+--- !u!222 &1612744206
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612744203}
+  m_CullTransparentMesh: 1
 --- !u!1 &1616754467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,7 +2122,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinomiName: "\u30EA\u30F3\u30B4"
   generatLocation: 0
-  kinomiManager: {fileID: 1024004763}
+  comboData:
+    comboName: 
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 1
+    isFrist: 1
+    useCombo: 0
+  score: 50
 --- !u!1001 &1826209069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2110,6 +2302,86 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458fc5cb241b7db46ae28064c3d467f4, type: 3}
+--- !u!1 &1974370579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974370580}
+  - component: {fileID: 1974370582}
+  - component: {fileID: 1974370581}
+  m_Layer: 5
+  m_Name: ScoreNum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1974370580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974370579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 838806162}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 378.6, y: -46.1}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1974370581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974370579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 300
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 5
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1974370582
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974370579}
+  m_CullTransparentMesh: 1
 --- !u!1 &1999389262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2486,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinomiName: "\u30D0\u30CA\u30CA"
   generatLocation: 1
-  kinomiManager: {fileID: 1024004763}
+  comboData:
+    comboName: 
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 1
+    isFrist: 1
+    useCombo: 0
+  score: 50
 --- !u!1 &2085015371
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,14 +22,21 @@ public class Kinomi : MonoBehaviour
     private string kinomiName;  // –Ø‚ÌÀ‚Ì–¼‘O
     [SerializeField]
     GenerationLocation generatLocation;  // –Ø‚ÌÀ‚Ì¶¬êŠ
-
-
     [SerializeField]
-    private KinomiManager kinomiManager;
+    private ComboData comboData;
+
+    public int score = 50;
+
+    public static Kinomi instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void OnCollisionEnter(Collision collision)
     {
-        kinomiManager.CountItem(kinomiName, 1);
+        KinomiManager.instance.CountItem(kinomiName, 1);
         this.gameObject.SetActive(false);
     }
 }
