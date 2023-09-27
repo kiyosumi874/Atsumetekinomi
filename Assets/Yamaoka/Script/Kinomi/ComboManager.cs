@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// コンボマネージャー
+/// </summary>
 public class ComboManager : MonoBehaviour
 {
     [SerializeField]
-    private List<ComboData> comboDataList = new List<ComboData>();
+    private List<ComboData> comboDataList = new List<ComboData>();  // 使用可能なコンボ格納用List
 
     [SerializeField]
-    ComboData[] comboDatas;
+    ComboData[] comboDatas;   // コンボデータ格納用List
 
-    public int score = 0;
+    public int score = 0;     // スコア
     public Text scoreText;
 
-    public static ComboManager instance;
+    public static ComboManager instance;    // インスタンス
+
     private void Awake()
     {
         instance = this;
@@ -73,7 +77,7 @@ public class ComboManager : MonoBehaviour
                 score = comboDatas[i].UseCombo(comboDatas[i].isFrist, score);
             }
         }
-        GetNotComboScore();
+        //GetNotComboScore();
     }
 
     /// <summary>
@@ -130,9 +134,7 @@ public class ComboManager : MonoBehaviour
                     comboDatas[i].useCombo = false;
                 }
             }
-        }
-        for (int i = 0; i < comboDatas.Length; i++)
-        {
+
             if (KinomiManager.instance.hasOrenge
                 && KinomiManager.instance.hasBanana)
             {
