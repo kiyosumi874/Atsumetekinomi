@@ -64,9 +64,12 @@ public class KinomiManager : MonoBehaviour
     public int orengeNum = 0;
     public int bananaNum = 0;
 
+    public static KinomiManager instance;
+
     private void Awake()
     {
         LoadKinomiSourceData();
+        instance = this;
     }
 
     private void Update()
