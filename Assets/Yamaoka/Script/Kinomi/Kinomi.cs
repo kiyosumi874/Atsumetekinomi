@@ -20,10 +20,7 @@ public class Kinomi : MonoBehaviour
 
     [SerializeField]
     private string kinomiName;  // –Ø‚ÌÀ‚Ì–¼‘O
-    [SerializeField]
-    GenerationLocation generatLocation;  // –Ø‚ÌÀ‚Ì¶¬êŠ
-    [SerializeField]
-    private ComboData comboData;
+    public GenerationLocation generatLocation;  // –Ø‚ÌÀ‚Ì¶¬êŠ
 
     public int score = 50;
 
@@ -36,7 +33,10 @@ public class Kinomi : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        KinomiManager.instance.CountItem(kinomiName, 1);
-        this.gameObject.SetActive(false);
+        if(collision.gameObject.tag == "Player")
+        {
+            KinomiManager.instance.CountItem(kinomiName, 1);
+            this.gameObject.SetActive(false);
+        }
     }
 }
