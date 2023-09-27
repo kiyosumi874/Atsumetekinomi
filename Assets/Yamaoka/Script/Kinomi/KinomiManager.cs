@@ -64,7 +64,7 @@ public class KinomiManager : MonoBehaviour
     public int appleNum = 0;
     public int orengeNum = 0;
     public int bananaNum = 0;
-
+    // –Ø‚ÌÀŠ”»’èƒtƒ‰ƒO
     public bool hasApple = false;
     public bool hasOrenge = false;
     public bool hasBanana = false;
@@ -201,8 +201,6 @@ public class KinomiManager : MonoBehaviour
         Debug.Log(kinomiData.name + "‚ğæ“¾");
         Debug.Log("‚Á‚Ä‚¢‚é–Ø‚ÌÀ‚Ì”F" + playerKinomiDataList.Count);
         nowKinomiNum++;
-
-        ComboManager.instance.CheckUseCombo();
     }
 
     /// <summary>
