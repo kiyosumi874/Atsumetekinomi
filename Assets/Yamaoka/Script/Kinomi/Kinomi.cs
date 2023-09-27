@@ -36,7 +36,8 @@ public class Kinomi : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             KinomiManager.instance.CountItem(kinomiName, 1);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }
