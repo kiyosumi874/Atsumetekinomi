@@ -77,7 +77,7 @@ public class ComboManager : MonoBehaviour
                 score = comboDatas[i].UseCombo(comboDatas[i].isFrist, score);
             }
         }
-        //GetNotComboScore();
+        GetNotComboScore();
     }
 
     /// <summary>
@@ -85,13 +85,39 @@ public class ComboManager : MonoBehaviour
     /// </summary>
     public void GetNotComboScore()
     {
-        if(KinomiManager.instance.appleNum > 1
-            || KinomiManager.instance.orengeNum > 1
-            || KinomiManager.instance.bananaNum > 1)
+        // 使えるコンボがない場合
+        if(comboDataList.Count == 0)
         {
-            score +=
-                Kinomi.instance.score * (KinomiManager.instance.appleNum - 1 + KinomiManager.instance.orengeNum - 1 + KinomiManager.instance.bananaNum - 1);
+            if (KinomiManager.instance.appleNum >= 1 )
+            {
+                score += Kinomi.instance.score * KinomiManager.instance.appleNum;
+            }
+            if (KinomiManager.instance.orengeNum >= 1)
+            {
+                score += Kinomi.instance.score * KinomiManager.instance.orengeNum;
+            }
+            if (KinomiManager.instance.bananaNum >= 1 )
+            {
+                score += Kinomi.instance.score * KinomiManager.instance.bananaNum;
+            }
         }
+        // 使えるコンボがあり、かつ木の実が余っている場合
+        else
+        {
+            if (KinomiManager.instance.appleNum - 1 >= 1)
+            {
+                score += Kinomi.instance.score * (KinomiManager.instance.appleNum - 1);
+            }
+            if (KinomiManager.instance.orengeNum - 1 >= 1)
+            {
+                score += Kinomi.instance.score * (KinomiManager.instance.orengeNum - 1);
+            }
+            if (KinomiManager.instance.bananaNum - 1 >= 1)
+            {
+                score += Kinomi.instance.score * (KinomiManager.instance.bananaNum - 1);
+            }
+        }
+        Debug.Log("取得スコア(木の実のみ)：" + score);
     }
 
     /// <summary>

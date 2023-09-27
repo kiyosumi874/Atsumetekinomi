@@ -14,6 +14,9 @@ public class KinomiGenerator : MonoBehaviour
     [SerializeField]
     private GameObject banana;
 
+    [SerializeField]
+    private List<GameObject> kinomis = new List<GameObject>();
+
 
     [SerializeField]
     Transform NrangeA;
@@ -26,6 +29,8 @@ public class KinomiGenerator : MonoBehaviour
 
     public float time;
 
+    Kinomi.GenerationLocation generationLocation;
+
 
     private void Start()
     {
@@ -37,15 +42,41 @@ public class KinomiGenerator : MonoBehaviour
     {
         time = time + Time.deltaTime;
 
-        if(time > 1.0f)
+        for(int i = 0; i < kinomis.Count; i++)
         {
-            if(apple.GetComponent<Kinomi>().generatLocation == Kinomi.GenerationLocation.Near)
+            generationLocation = kinomis[i].GetComponent<Kinomi>().generatLocation;
+            switch(generationLocation)
             {
-                float x = Random.Range(NrangeA.position.x, NrangeB.position.x);
-                float z = Random.Range(NrangeA.position.z, NrangeB.position.z);
+                case Kinomi.GenerationLocation.Near:
 
-                Instantiate(apple, new Vector3(x, 2, z), apple.transform.rotation);
+                    break;
             }
+        }
+
+
+        if(time > 5.0f)
+        {
+            for (int i = 0; i < kinomis.Count; i++)
+            {
+                generationLocation = kinomis[i].GetComponent<Kinomi>().generatLocation;
+                switch (generationLocation)
+                {
+                    case Kinomi.GenerationLocation.Near:
+                        float x = Random.Range(NrangeA.position.x, NrangeB.position.x);
+                        float z = Random.Range(NrangeA.position.z, NrangeB.position.z);
+
+                        Instantiate(kinomis[i], new Vector3(x, 2, z), kinomis[i].transform.rotation);
+                        break;
+                }
+            }
+
+            //if (apple.GetComponent<Kinomi>().generatLocation == Kinomi.GenerationLocation.Near)
+            //{
+            //    float x = Random.Range(NrangeA.position.x, NrangeB.position.x);
+            //    float z = Random.Range(NrangeA.position.z, NrangeB.position.z);
+
+            //    Instantiate(apple, new Vector3(x, 2, z), apple.transform.rotation);
+            //}
 
             time = 0.0f;
         }
