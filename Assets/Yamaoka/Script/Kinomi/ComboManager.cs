@@ -85,20 +85,21 @@ public class ComboManager : MonoBehaviour
     /// </summary>
     public void GetNotComboScore()
     {
+        int kinomiScore = 0;
         // 使えるコンボがない場合
         if(comboDataList.Count == 0)
         {
             if (KinomiManager.instance.appleNum >= 1 )
             {
-                score += Kinomi.instance.score * KinomiManager.instance.appleNum;
+                kinomiScore += Kinomi.instance.score * KinomiManager.instance.appleNum;
             }
             if (KinomiManager.instance.orengeNum >= 1)
             {
-                score += Kinomi.instance.score * KinomiManager.instance.orengeNum;
+                kinomiScore += Kinomi.instance.score * KinomiManager.instance.orengeNum;
             }
             if (KinomiManager.instance.bananaNum >= 1 )
             {
-                score += Kinomi.instance.score * KinomiManager.instance.bananaNum;
+                kinomiScore += Kinomi.instance.score * KinomiManager.instance.bananaNum;
             }
         }
         // 使えるコンボがあり、かつ木の実が余っている場合
@@ -106,18 +107,21 @@ public class ComboManager : MonoBehaviour
         {
             if (KinomiManager.instance.appleNum - 1 >= 1)
             {
-                score += Kinomi.instance.score * (KinomiManager.instance.appleNum - 1);
+                kinomiScore += Kinomi.instance.score * (KinomiManager.instance.appleNum - 1);
             }
             if (KinomiManager.instance.orengeNum - 1 >= 1)
             {
-                score += Kinomi.instance.score * (KinomiManager.instance.orengeNum - 1);
+                kinomiScore += Kinomi.instance.score * (KinomiManager.instance.orengeNum - 1);
             }
             if (KinomiManager.instance.bananaNum - 1 >= 1)
             {
-                score += Kinomi.instance.score * (KinomiManager.instance.bananaNum - 1);
+                kinomiScore += Kinomi.instance.score * (KinomiManager.instance.bananaNum - 1);
             }
         }
-        Debug.Log("取得スコア(木の実のみ)：" + score);
+        Debug.Log("取得スコア(木の実のみ)：" + kinomiScore);
+        // 現在のスコアに加算
+        score += kinomiScore;
+        Debug.Log("合計スコア：" + score);
     }
 
     /// <summary>

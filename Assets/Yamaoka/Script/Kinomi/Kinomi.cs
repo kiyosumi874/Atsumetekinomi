@@ -14,8 +14,8 @@ public class Kinomi : MonoBehaviour
     public enum GenerationLocation
     {
         Near,    // ‘ƒ‚Ì‹ß‚­
+        Middle,  // ’†ŠÔ
         Far,     // ‘ƒ‚©‚ç‰“‚¢
-        Middle   // ’†ŠÔ
     }
 
     [SerializeField]
@@ -36,7 +36,7 @@ public class Kinomi : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             KinomiManager.instance.CountItem(kinomiName, 1);
-            //this.gameObject.SetActive(false);
+            KinomiGenerator.instance.nowKinomiNum--;
             Destroy(this.gameObject);
         }
     }
