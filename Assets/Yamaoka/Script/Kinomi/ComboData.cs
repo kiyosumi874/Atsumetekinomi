@@ -29,7 +29,7 @@ public class ComboData
         }
         else
         {
-            score += normalComboScore;
+            score += normalComboScore * comboLevel;
         }
         comboCount++;
 

@@ -17,11 +17,21 @@ public class ComboManager : MonoBehaviour
     public int score = 0;     // スコア
     public Text scoreText;
 
+    // コンボUI
+    public Text[] comboText;
+    public Text[] comboLvText;
+
     public static ComboManager instance;    // インスタンス
 
     private void Awake()
     {
         instance = this;
+
+        for(int i = 0; i < comboText.Length; i++)
+        {
+            comboText[i].enabled = false;
+            comboLvText[i].enabled = false;
+        }
     }
 
     private void Update()
@@ -32,6 +42,8 @@ public class ComboManager : MonoBehaviour
         SetFirstFlag();
         SetUseComboFlag();
         DeleteCombo();
+        UpdateComboLevel();
+        ShowComboUI();
     }
 
     /// <summary>
@@ -131,7 +143,8 @@ public class ComboManager : MonoBehaviour
     {
         for (int i = 0; i < comboDatas.Length; i++)
         {
-            if(comboDatas[i].comboCount <= 0)
+            if(comboDatas[i].comboCount <= 0
+                && comboDatas[i].comboLevel == 1)
             {
                 comboDatas[i].isFrist = true;
             }
@@ -183,4 +196,35 @@ public class ComboManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// コンボレベルの更新
+    /// </summary>
+    public void UpdateComboLevel()
+    {
+        for (int i = 0; i < comboDatas.Length; i++)
+        {
+            if (comboDatas[i].comboCount >= 2)
+            {
+                comboDatas[i].comboLevel++;
+                comboDatas[i].comboCount = 0;
+            }
+        }
+    }
+
+    /// <summary>
+    /// コンボUIを表示する
+    /// </summary>
+    public void ShowComboUI()
+    {
+        for (int i = 0; i < comboDatas.Length; i++)
+        {
+            if (comboDatas[i].comboName == comboText[i].text
+                && !comboDatas[i].isFrist)
+            {
+                comboText[i].enabled = true;
+                comboLvText[i].enabled = true;
+            }
+            comboLvText[i].text = "Lv ." + comboDatas[i].comboLevel.ToString();
+        }
+    }
 }
