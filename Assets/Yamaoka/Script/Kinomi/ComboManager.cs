@@ -203,7 +203,7 @@ public class ComboManager : MonoBehaviour
     {
         for (int i = 0; i < comboDatas.Length; i++)
         {
-            if (comboDatas[i].comboCount >= 2)
+            if (comboDatas[i].comboCount > comboDatas[i].comboLvUpCount - 1)
             {
                 comboDatas[i].comboLevel++;
                 comboDatas[i].comboCount = 0;

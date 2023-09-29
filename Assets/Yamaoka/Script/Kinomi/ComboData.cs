@@ -13,6 +13,7 @@ public class ComboData
     public int firstComboScore = 500;   // 最初に使用したときのスコア
     public int normalComboScore = 100;  // 通常時のスコア
     public int comboLevel = 1;      // コンボレベル
+    public int comboLvUpCount = 5;
     public bool isFrist = true;     // 初めて使用するかどうか
     public bool useCombo = false;   // コンボを使えるかどうか
 

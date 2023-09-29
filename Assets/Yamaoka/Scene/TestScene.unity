@@ -659,6 +659,7 @@ MonoBehaviour:
     firstComboScore: 500
     normalComboScore: 100
     comboLevel: 1
+    comboLvUpCount: 2
     isFrist: 1
     useCombo: 0
   - comboName: "\u30AA\u30EC\u30F3\u30B8\u30D0\u30CA\u30CA"
@@ -666,6 +667,7 @@ MonoBehaviour:
     firstComboScore: 500
     normalComboScore: 100
     comboLevel: 1
+    comboLvUpCount: 5
     isFrist: 1
     useCombo: 0
   score: 0
