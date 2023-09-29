@@ -13,7 +13,6 @@ public class NestArea : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             ComboManager.instance.UseCombo();
-            //ComboManager.instance.GetNotComboScore();
             KinomiManager.instance.LostAllKinomi();
         }
     }

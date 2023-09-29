@@ -20,6 +20,8 @@ public class ComboManager : MonoBehaviour
     // コンボUI
     public Text[] comboText;
     public Text[] comboLvText;
+    public Text[] comboNoText;
+    public int nowComboNum = 0;
 
     public static ComboManager instance;    // インスタンス
 
@@ -31,13 +33,13 @@ public class ComboManager : MonoBehaviour
         {
             comboText[i].enabled = false;
             comboLvText[i].enabled = false;
+            comboNoText[i].enabled = false;
         }
     }
 
     private void Update()
     {
         scoreText.text = score.ToString();
-
         CheckUseCombo();
         SetFirstFlag();
         SetUseComboFlag();
@@ -216,6 +218,7 @@ public class ComboManager : MonoBehaviour
     /// </summary>
     public void ShowComboUI()
     {
+        int count = 0;
         for (int i = 0; i < comboDatas.Length; i++)
         {
             if (comboDatas[i].comboName == comboText[i].text
@@ -223,8 +226,12 @@ public class ComboManager : MonoBehaviour
             {
                 comboText[i].enabled = true;
                 comboLvText[i].enabled = true;
+                comboNoText[i].enabled = true;
             }
+            count = i + 1;
+            Debug.Log("count" + count);
             comboLvText[i].text = "Lv ." + comboDatas[i].comboLevel.ToString();
         }
+        comboNoText[count - 1].text = "(" + count + "/" + comboDatas.Length + ")";
     }
 }
