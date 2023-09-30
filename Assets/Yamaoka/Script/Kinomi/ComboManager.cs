@@ -229,7 +229,7 @@ public class ComboManager : MonoBehaviour
                 comboNoText[i].enabled = true;
             }
             count = i + 1;
-            Debug.Log("count" + count);
+            //Debug.Log("count" + count);
             comboLvText[i].text = "Lv ." + comboDatas[i].comboLevel.ToString();
         }
         comboNoText[count - 1].text = "(" + count + "/" + comboDatas.Length + ")";
