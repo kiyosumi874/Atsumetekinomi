@@ -42,11 +42,31 @@ public class KinomiGenerator : MonoBehaviour
     Transform MrangeC;
     [SerializeField]
     Transform MrangeD;
+    [SerializeField]
+    Transform MrangeE;
+    [SerializeField]
+    Transform MrangeF;
+    [SerializeField]
+    Transform MrangeG;
+    [SerializeField]
+    Transform MrangeH;
     // âìï˚
     [SerializeField]
     Transform FrangeA;
     [SerializeField]
     Transform FrangeB;
+    [SerializeField]
+    Transform FrangeC;
+    [SerializeField]
+    Transform FrangeD;
+    [SerializeField]
+    Transform FrangeE;
+    [SerializeField]
+    Transform FrangeF;
+    [SerializeField]
+    Transform FrangeG;
+    [SerializeField]
+    Transform FrangeH;
 
     public float nowKinomiNum = 0;      // åªç›ÇÃëçñÿÇÃé¿êî
     public float maxKinomiNum = 20;     // ñÿÇÃé¿ÇÃç≈ëÂê∂ê¨êî
@@ -106,9 +126,9 @@ public class KinomiGenerator : MonoBehaviour
                 float nx2 = Random.Range(NrangeC.position.x, NrangeD.position.x);
                 float nz2 = Random.Range(NrangeC.position.z, NrangeD.position.z);
                 float nx3 = Random.Range(NrangeE.position.x, NrangeF.position.x);
-                float nz3 = Random.Range(NrangeG.position.z, NrangeH.position.z);
+                float nz3 = Random.Range(NrangeE.position.z, NrangeF.position.z);
                 float nx4 = Random.Range(NrangeG.position.x, NrangeH.position.x);
-                float nz4 = Random.Range(NrangeE.position.z, NrangeF.position.z);
+                float nz4 = Random.Range(NrangeG.position.z, NrangeH.position.z);
                 int Nrand = Random.RandomRange(0, nearKinomis.Count);
 
                 Instantiate(nearKinomis[Nrand], new Vector3(nx, 2, nz), nearKinomis[Nrand].transform.rotation);
@@ -122,18 +142,33 @@ public class KinomiGenerator : MonoBehaviour
                 float mz = Random.Range(MrangeA.position.z, MrangeB.position.z);
                 float mx2 = Random.Range(MrangeC.position.x, MrangeD.position.x);
                 float mz2 = Random.Range(MrangeC.position.z, MrangeD.position.z);
+                float mx3 = Random.Range(MrangeE.position.x, MrangeF.position.x);
+                float mz3 = Random.Range(MrangeE.position.z, MrangeF.position.z);
+                float mx4 = Random.Range(MrangeG.position.x, MrangeH.position.x);
+                float mz4 = Random.Range(MrangeG.position.z, MrangeH.position.z);
                 int Mrand = Random.RandomRange(0, middleKinomis.Count);
 
                 Instantiate(middleKinomis[Mrand], new Vector3(mx, 2, mz), middleKinomis[Mrand].transform.rotation);
                 Instantiate(middleKinomis[Mrand], new Vector3(mx2, 2, mz2), middleKinomis[Mrand].transform.rotation);
+                Instantiate(middleKinomis[Mrand], new Vector3(mx3, 2, mz3), middleKinomis[Mrand].transform.rotation);
+                Instantiate(middleKinomis[Mrand], new Vector3(mx4, 2, mz4), middleKinomis[Mrand].transform.rotation);
                 //Debug.Log("CreateMiddle");
                 break;
             case Kinomi.GenerationLocation.Far:
                 float fx = Random.Range(FrangeA.position.x, FrangeB.position.x);
                 float fz = Random.Range(FrangeA.position.z, FrangeB.position.z);
+                float fx2 = Random.Range(FrangeC.position.x, FrangeD.position.x);
+                float fz2 = Random.Range(FrangeC.position.z, FrangeD.position.z);
+                float fx3 = Random.Range(FrangeE.position.x, FrangeF.position.x);
+                float fz3 = Random.Range(FrangeE.position.z, FrangeF.position.z);
+                float fx4 = Random.Range(FrangeG.position.x, FrangeH.position.x);
+                float fz4 = Random.Range(FrangeG.position.z, FrangeH.position.z);
                 int Frand = Random.RandomRange(0, farKinomis.Count);
 
                 Instantiate(farKinomis[Frand], new Vector3(fx, 2, fz), farKinomis[Frand].transform.rotation);
+                Instantiate(farKinomis[Frand], new Vector3(fx2, 2, fz2), farKinomis[Frand].transform.rotation);
+                Instantiate(farKinomis[Frand], new Vector3(fx3, 2, fz3), farKinomis[Frand].transform.rotation);
+                Instantiate(farKinomis[Frand], new Vector3(fx4, 2, fz4), farKinomis[Frand].transform.rotation);
                 //Debug.Log("CreateFar");
                 break;
         }
