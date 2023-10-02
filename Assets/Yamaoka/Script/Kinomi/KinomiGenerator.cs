@@ -21,6 +21,18 @@ public class KinomiGenerator : MonoBehaviour
     Transform NrangeA;
     [SerializeField]
     Transform NrangeB;
+    [SerializeField]
+    Transform NrangeC;
+    [SerializeField]
+    Transform NrangeD;
+    [SerializeField]
+    Transform NrangeE;
+    [SerializeField]
+    Transform NrangeF;
+    [SerializeField]
+    Transform NrangeG;
+    [SerializeField]
+    Transform NrangeH;
     // ’†ŠÔ
     [SerializeField]
     Transform MrangeA;
@@ -87,9 +99,18 @@ public class KinomiGenerator : MonoBehaviour
             case Kinomi.GenerationLocation.Near:
                 float nx = Random.Range(NrangeA.position.x, NrangeB.position.x);
                 float nz = Random.Range(NrangeA.position.z, NrangeB.position.z);
+                float nx2 = Random.Range(NrangeC.position.x, NrangeD.position.x);
+                float nz2 = Random.Range(NrangeC.position.z, NrangeD.position.z);
+                float nx3 = Random.Range(NrangeE.position.x, NrangeF.position.x);
+                float nz3 = Random.Range(NrangeG.position.z, NrangeH.position.z);
+                float nx4 = Random.Range(NrangeG.position.x, NrangeH.position.x);
+                float nz4 = Random.Range(NrangeE.position.z, NrangeF.position.z);
                 int Nrand = Random.RandomRange(0, nearKinomis.Count);
 
                 Instantiate(nearKinomis[Nrand], new Vector3(nx, 2, nz), nearKinomis[Nrand].transform.rotation);
+                Instantiate(nearKinomis[Nrand], new Vector3(nx2, 2, nz2), nearKinomis[Nrand].transform.rotation);
+                Instantiate(nearKinomis[Nrand], new Vector3(nx3, 2, nz3), nearKinomis[Nrand].transform.rotation);
+                Instantiate(nearKinomis[Nrand], new Vector3(nx4, 2, nz4), nearKinomis[Nrand].transform.rotation);
                 //Debug.Log("CreateNear");
                 break;
             case Kinomi.GenerationLocation.Middle:
