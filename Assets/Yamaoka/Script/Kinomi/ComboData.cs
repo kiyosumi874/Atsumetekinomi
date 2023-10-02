@@ -16,6 +16,14 @@ public class ComboData
     public int comboLvUpCount = 5;
     public bool isFrist = true;     // 初めて使用するかどうか
     public bool useCombo = false;   // コンボを使えるかどうか
+    public int useAppleNum = 0;
+    public int useOrengeNum = 0;
+    public int useBananaNum = 0;
+    public int useRemonNum = 0;
+    //public bool useApple;
+    //public bool useOrenge;
+    //public bool useBanana;
+    //public bool useRemon;
 
     /// <summary>
     /// コンボを使用する

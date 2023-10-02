@@ -58,16 +58,19 @@ public class KinomiManager : MonoBehaviour
     public Text appleNumText;
     public Text orengeNumText;
     public Text bananaNumText;
-    
+    public Text remonNumText;
+
     public int nowKinomiNum = 0;    // 今持っている木の実の合計数
     // それぞれの木の実の個数
     public int appleNum = 0;
     public int orengeNum = 0;
     public int bananaNum = 0;
+    public int remonNum = 0;
     // 木の実所持判定フラグ
     public bool hasApple = false;
     public bool hasOrenge = false;
     public bool hasBanana = false;
+    public bool hasRemon = false;
 
     public static KinomiManager instance;   // インスタンス
 
@@ -85,23 +88,7 @@ public class KinomiManager : MonoBehaviour
         appleNumText.text = appleNum.ToString();
         orengeNumText.text = orengeNum.ToString();
         bananaNumText.text = bananaNum.ToString();
-
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    LostAllKinomi();
-        //}
-        //if (Input.GetKeyDown(KeyCode.T))
-        //{
-        //    LostKinomi("リンゴ", 1);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    LostKinomi("オレンジ", 1);
-        //}
-        //if (Input.GetKeyDown(KeyCode.U))
-        //{
-        //    LostKinomi("バナナ", 1);
-        //}
+        remonNumText.text = remonNum.ToString();
     }
 
     /// <summary>
@@ -162,6 +149,14 @@ public class KinomiManager : MonoBehaviour
         {
             hasBanana = true;
         }
+        if (remonNum <= 0)
+        {
+            hasRemon = false;
+        }
+        else
+        {
+            hasRemon = true;
+        }
     }
 
     /// <summary>
@@ -197,6 +192,10 @@ public class KinomiManager : MonoBehaviour
         {
             bananaNum++;
         }
+        else if (kinomiName == "レモン")
+        {
+            remonNum++;
+        }
 
         Debug.Log(kinomiData.name + "を取得");
         Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
@@ -231,6 +230,10 @@ public class KinomiManager : MonoBehaviour
                 {
                     bananaNum -= count;
                 }
+                else if (kinomiName == "バナナ")
+                {
+                    remonNum -= count;
+                }
                 nowKinomiNum -= count;
                 Debug.Log(data.name + "を " + count + "個ロスト");
                 Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
@@ -257,7 +260,7 @@ public class KinomiManager : MonoBehaviour
         appleNum = 0;
         orengeNum = 0;
         bananaNum = 0;
-
+        remonNum = 0;
         Debug.Log("すべての木の実をロストしました");
         Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
     }

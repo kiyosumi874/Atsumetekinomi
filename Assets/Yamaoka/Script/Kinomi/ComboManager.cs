@@ -115,27 +115,63 @@ public class ComboManager : MonoBehaviour
             {
                 kinomiScore += Kinomi.instance.score * KinomiManager.instance.bananaNum;
             }
+            if(KinomiManager.instance.remonNum >= 1)
+            {
+                kinomiScore += Kinomi.instance.score * KinomiManager.instance.remonNum;
+            }
         }
         // 使えるコンボがあり、かつ木の実が余っている場合
         else
         {
-            if (KinomiManager.instance.appleNum - 1 >= 1)
+            foreach(ComboData data in comboDataList)
             {
-                kinomiScore += Kinomi.instance.score * (KinomiManager.instance.appleNum - 1);
-            }
-            if (KinomiManager.instance.orengeNum - 1 >= 1)
-            {
-                kinomiScore += Kinomi.instance.score * (KinomiManager.instance.orengeNum - 1);
-            }
-            if (KinomiManager.instance.bananaNum - 1 >= 1)
-            {
-                kinomiScore += Kinomi.instance.score * (KinomiManager.instance.bananaNum - 1);
+                switch(data.comboName)
+                {
+                    case "リンゴオレンジ":
+                        kinomiScore += OverKinomiScore(kinomiScore, data);
+                        break;
+                    case "オレンジバナナ":
+                        kinomiScore += OverKinomiScore(kinomiScore, data);
+                        break;
+                }
             }
         }
         Debug.Log("取得スコア(木の実のみ)：" + kinomiScore);
         // 現在のスコアに加算
         score += kinomiScore;
         Debug.Log("合計スコア：" + score);
+    }
+
+    /// <summary>
+    /// コンボで使用されずに余った木の実のスコアを計算
+    /// </summary>
+    /// <param name="score">現在の木の実スコア</param>
+    /// <param name="comboData">コンボデータ</param>
+    /// <returns>計算された木の実スコア</returns>
+    public int OverKinomiScore(int score, ComboData comboData)
+    {
+        if (KinomiManager.instance.appleNum - 1 >= comboData.useAppleNum
+            && KinomiManager.instance.hasApple)
+        {
+            score += Kinomi.instance.score * (KinomiManager.instance.appleNum - comboData.useAppleNum);
+        }
+        if (KinomiManager.instance.orengeNum - 1 >= comboData.useOrengeNum
+            && KinomiManager.instance.hasOrenge)
+        {
+            score += Kinomi.instance.score * (KinomiManager.instance.orengeNum - comboData.useOrengeNum);
+        }
+        if (KinomiManager.instance.bananaNum - 1 >= comboData.useBananaNum
+            && KinomiManager.instance.hasBanana)
+        {
+            score += Kinomi.instance.score * (KinomiManager.instance.bananaNum - comboData.useBananaNum);
+        }
+        if (KinomiManager.instance.remonNum - 1 >= comboData.useRemonNum
+            && KinomiManager.instance.hasRemon)
+        {
+            score += Kinomi.instance.score * (KinomiManager.instance.remonNum - comboData.useRemonNum);
+        }
+
+        return score;
     }
 
     /// <summary>
