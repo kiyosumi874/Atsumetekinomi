@@ -60,6 +60,7 @@ public class TargetIndicator : MonoBehaviour
         // スクリーン座標系の値をUI座標系の値に変換する
         rectTransform.anchoredPosition = pos / canvasScale;
 
+        // Targetの方向を示す矢印の画像を表示、向きを計
         arrow.enabled = isOffscreen;
         if(isOffscreen)
         {

@@ -86,22 +86,22 @@ public class KinomiManager : MonoBehaviour
         orengeNumText.text = orengeNum.ToString();
         bananaNumText.text = bananaNum.ToString();
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            LostAllKinomi();
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            LostKinomi("リンゴ", 1);
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            LostKinomi("オレンジ", 1);
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            LostKinomi("バナナ", 1);
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    LostAllKinomi();
+        //}
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    LostKinomi("リンゴ", 1);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    LostKinomi("オレンジ", 1);
+        //}
+        //if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    LostKinomi("バナナ", 1);
+        //}
     }
 
     /// <summary>
