@@ -38,6 +38,10 @@ public class KinomiGenerator : MonoBehaviour
     Transform MrangeA;
     [SerializeField]
     Transform MrangeB;
+    [SerializeField]
+    Transform MrangeC;
+    [SerializeField]
+    Transform MrangeD;
     // ‰“•û
     [SerializeField]
     Transform FrangeA;
@@ -116,9 +120,12 @@ public class KinomiGenerator : MonoBehaviour
             case Kinomi.GenerationLocation.Middle:
                 float mx = Random.Range(MrangeA.position.x, MrangeB.position.x);
                 float mz = Random.Range(MrangeA.position.z, MrangeB.position.z);
+                float mx2 = Random.Range(MrangeC.position.x, MrangeD.position.x);
+                float mz2 = Random.Range(MrangeC.position.z, MrangeD.position.z);
                 int Mrand = Random.RandomRange(0, middleKinomis.Count);
 
                 Instantiate(middleKinomis[Mrand], new Vector3(mx, 2, mz), middleKinomis[Mrand].transform.rotation);
+                Instantiate(middleKinomis[Mrand], new Vector3(mx2, 2, mz2), middleKinomis[Mrand].transform.rotation);
                 //Debug.Log("CreateMiddle");
                 break;
             case Kinomi.GenerationLocation.Far:
