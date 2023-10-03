@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinomiName: "\u30AA\u30EC\u30F3\u30B8"
-  generatLocation: 2
+  generatLocation: 1
   score: 50
