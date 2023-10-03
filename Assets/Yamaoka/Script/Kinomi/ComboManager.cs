@@ -171,7 +171,7 @@ public class ComboManager : MonoBehaviour
             && KinomiManager.instance.hasApple)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.appleNum);
-            KinomiManager.instance.appleNum -= 1;
+            KinomiManager.instance.appleNum = 0;
             Debug.Log("AppleNum : " + KinomiManager.instance.appleNum);
             Debug.Log("Apple : " + score);
         }
@@ -179,7 +179,7 @@ public class ComboManager : MonoBehaviour
             && KinomiManager.instance.hasOrenge)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.orengeNum);
-            KinomiManager.instance.orengeNum -= 1;
+            KinomiManager.instance.orengeNum = 0;
             Debug.Log("OrengeNum : " + KinomiManager.instance.orengeNum);
             Debug.Log("Orange : " + score);
         }
@@ -187,7 +187,7 @@ public class ComboManager : MonoBehaviour
             && KinomiManager.instance.hasBanana)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.bananaNum);
-            KinomiManager.instance.bananaNum -= 1;
+            KinomiManager.instance.bananaNum = 0;
             Debug.Log("BananaNum : " + KinomiManager.instance.bananaNum);
             Debug.Log("Banana : " + score);
         }
@@ -195,7 +195,7 @@ public class ComboManager : MonoBehaviour
             && KinomiManager.instance.hasLemon)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.lemonNum);
-            KinomiManager.instance.lemonNum -= 1;
+            KinomiManager.instance.lemonNum = 0;
             Debug.Log("LemonNum : " + KinomiManager.instance.lemonNum);
             Debug.Log("Lemon : " + score);
         }
@@ -203,7 +203,7 @@ public class ComboManager : MonoBehaviour
             && KinomiManager.instance.hasWatermelon)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.watermelonNum);
-            KinomiManager.instance.watermelonNum -= 1;
+            KinomiManager.instance.watermelonNum = 0;
             Debug.Log("WatermelonNum : " + KinomiManager.instance.watermelonNum);
             Debug.Log("Watermelon : " + score);
         }
