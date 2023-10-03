@@ -1060,10 +1060,6 @@ MonoBehaviour:
     useOrengeNum: 1
     useBananaNum: 0
     useRemonNum: 0
-    useApple: 1
-    useOrenge: 1
-    useBanana: 0
-    useRemon: 0
   - comboName: "\u30AA\u30EC\u30F3\u30B8\u30D0\u30CA\u30CA"
     comboCount: 0
     firstComboScore: 500
@@ -1076,10 +1072,6 @@ MonoBehaviour:
     useOrengeNum: 1
     useBananaNum: 1
     useRemonNum: 0
-    useApple: 0
-    useOrenge: 1
-    useBanana: 1
-    useRemon: 0
   score: 0
   scoreText: {fileID: 1974370581}
   comboText:
