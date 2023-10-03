@@ -58,19 +58,22 @@ public class KinomiManager : MonoBehaviour
     public Text appleNumText;
     public Text orengeNumText;
     public Text bananaNumText;
-    public Text remonNumText;
+    public Text lemonNumText;
+    public Text watermelonNumText;
 
     public int nowKinomiNum = 0;    // 今持っている木の実の合計数
     // それぞれの木の実の個数
     public int appleNum = 0;
     public int orengeNum = 0;
     public int bananaNum = 0;
-    public int remonNum = 0;
+    public int lemonNum = 0;
+    public int watermelonNum = 0;
     // 木の実所持判定フラグ
     public bool hasApple = false;
     public bool hasOrenge = false;
     public bool hasBanana = false;
-    public bool hasRemon = false;
+    public bool hasLemon = false;
+    public bool hasWatermelon = false;
 
     public static KinomiManager instance;   // インスタンス
 
@@ -83,12 +86,13 @@ public class KinomiManager : MonoBehaviour
     private void Update()
     {
         CheckHasKinomi();
-
+        SetMinAllKinomisNum();
         allKinomiNumText.text = nowKinomiNum.ToString();
         appleNumText.text = appleNum.ToString();
         orengeNumText.text = orengeNum.ToString();
         bananaNumText.text = bananaNum.ToString();
-        remonNumText.text = remonNum.ToString();
+        lemonNumText.text = lemonNum.ToString();
+        watermelonNumText.text = watermelonNum.ToString();
     }
 
     /// <summary>
@@ -149,13 +153,21 @@ public class KinomiManager : MonoBehaviour
         {
             hasBanana = true;
         }
-        if (remonNum <= 0)
+        if (lemonNum <= 0)
         {
-            hasRemon = false;
+            hasLemon = false;
         }
         else
         {
-            hasRemon = true;
+            hasLemon = true;
+        }
+        if (watermelonNum <= 0)
+        {
+            hasWatermelon = false;
+        }
+        else
+        {
+            hasWatermelon = true;
         }
     }
 
@@ -194,7 +206,11 @@ public class KinomiManager : MonoBehaviour
         }
         else if (kinomiName == "レモン")
         {
-            remonNum++;
+            lemonNum++;
+        }
+        else if (kinomiName == "スイカ")
+        {
+            watermelonNum++;
         }
 
         Debug.Log(kinomiData.name + "を取得");
@@ -230,9 +246,13 @@ public class KinomiManager : MonoBehaviour
                 {
                     bananaNum -= count;
                 }
-                else if (kinomiName == "バナナ")
+                else if (kinomiName == "レモン")
                 {
-                    remonNum -= count;
+                    lemonNum -= count;
+                }
+                else if (kinomiName == "スイカ")
+                {
+                    watermelonNum -= count;
                 }
                 nowKinomiNum -= count;
                 Debug.Log(data.name + "を " + count + "個ロスト");
@@ -260,8 +280,36 @@ public class KinomiManager : MonoBehaviour
         appleNum = 0;
         orengeNum = 0;
         bananaNum = 0;
-        remonNum = 0;
+        lemonNum = 0;
+        watermelonNum = 0;
         Debug.Log("すべての木の実をロストしました");
         Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
+    }
+
+    /// <summary>
+    /// すべての木の実の所持数の最小値を設定
+    /// </summary>
+    public void SetMinAllKinomisNum()
+    {
+        if(appleNum <= 0)
+        {
+            appleNum = 0;
+        }
+        if (orengeNum <= 0)
+        {
+            orengeNum = 0;
+        }
+        if (bananaNum <= 0)
+        {
+            bananaNum = 0;
+        }
+        if (lemonNum <= 0)
+        {
+            lemonNum = 0;
+        }
+        if (watermelonNum <= 0)
+        {
+            watermelonNum = 0;
+        }
     }
 }
