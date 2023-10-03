@@ -31,6 +31,12 @@ public class Kinomi : MonoBehaviour
         instance = this;
     }
 
+    public void Update()
+    {
+        // –Ø‚ÌŽÀ‚ðYŽ²‰ñ“]‚³‚¹‚é
+        this.gameObject.transform.Rotate(new Vector3(0, 100, 0) * Time.deltaTime);
+    }
+
     public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
