@@ -62,6 +62,7 @@ public class KinomiManager : MonoBehaviour
     public Text watermelonNumText;
 
     public int nowKinomiNum = 0;    // 今持っている木の実の合計数
+    public int maxKinomiNum = 10;   // 所持できる木の実の最大数
     // それぞれの木の実の個数
     public int appleNum = 0;
     public int orengeNum = 0;
@@ -192,30 +193,39 @@ public class KinomiManager : MonoBehaviour
         kinomiData = new KinomiData(kinomiName, count);
         playerKinomiDataList.Add(kinomiData);
 
-        if (kinomiName == "リンゴ")
+        if(nowKinomiNum < maxKinomiNum)
         {
-            appleNum++;
+            if (kinomiName == "リンゴ")
+            {
+                appleNum++;
+            }
+            else if (kinomiName == "オレンジ")
+            {
+                orengeNum++;
+            }
+            else if (kinomiName == "バナナ")
+            {
+                bananaNum++;
+            }
+            else if (kinomiName == "レモン")
+            {
+                lemonNum++;
+            }
+            else if (kinomiName == "スイカ")
+            {
+                watermelonNum++;
+            }
+
+            nowKinomiNum++;
         }
-        else if (kinomiName == "オレンジ")
+
+        if(nowKinomiNum >= maxKinomiNum)
         {
-            orengeNum++;
-        }
-        else if (kinomiName == "バナナ")
-        {
-            bananaNum++;
-        }
-        else if (kinomiName == "レモン")
-        {
-            lemonNum++;
-        }
-        else if (kinomiName == "スイカ")
-        {
-            watermelonNum++;
+            nowKinomiNum = maxKinomiNum;
         }
 
         Debug.Log(kinomiData.name + "を取得");
         Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
-        nowKinomiNum++;
     }
 
     /// <summary>
@@ -274,7 +284,7 @@ public class KinomiManager : MonoBehaviour
         // List内を検索
         for (int i = 0; i < playerKinomiDataList.Count; i++)
         {
-            playerKinomiDataList.RemoveRange(0, nowKinomiNum);
+            playerKinomiDataList.RemoveRange(0, i);
         }
         nowKinomiNum = 0;
         appleNum = 0;
