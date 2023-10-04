@@ -189,12 +189,12 @@ public class KinomiManager : MonoBehaviour
             }
         }
 
-        // IDが一致しなければ、木の実を追加
-        kinomiData = new KinomiData(kinomiName, count);
-        playerKinomiDataList.Add(kinomiData);
-
         if(nowKinomiNum < maxKinomiNum)
         {
+            // IDが一致しなければ、木の実を追加
+            kinomiData = new KinomiData(kinomiName, count);
+            playerKinomiDataList.Add(kinomiData);
+
             if (kinomiName == "リンゴ")
             {
                 appleNum++;
@@ -281,11 +281,9 @@ public class KinomiManager : MonoBehaviour
     /// </summary>
     public void LostAllKinomi()
     {
-        // List内を検索
-        for (int i = 0; i < playerKinomiDataList.Count; i++)
-        {
-            playerKinomiDataList.RemoveRange(0, i);
-        }
+        // 所持している木の実のデータをクリア
+        playerKinomiDataList.Clear();
+
         nowKinomiNum = 0;
         appleNum = 0;
         orengeNum = 0;
