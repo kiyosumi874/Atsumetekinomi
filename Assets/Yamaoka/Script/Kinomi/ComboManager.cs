@@ -17,24 +17,11 @@ public class ComboManager : MonoBehaviour
     public int score = 0;     // スコア
     public Text scoreText;
 
-    // コンボUI
-    public Text[] comboText;
-    public Text[] comboLvText;
-    public Text[] comboNoText;
-    public int nowComboNum = 0;
-
     public static ComboManager instance;    // インスタンス
 
     private void Awake()
     {
         instance = this;
-
-        for(int i = 0; i < comboText.Length; i++)
-        {
-            comboText[i].enabled = false;
-            comboLvText[i].enabled = false;
-            comboNoText[i].enabled = false;
-        }
     }
 
     private void Update()
@@ -45,7 +32,7 @@ public class ComboManager : MonoBehaviour
         SetUseComboFlag();
         DeleteCombo();
         UpdateComboLevel();
-        ShowComboUI();
+        UIManager.instance.ShowComboUI(comboDatas);
     }
 
     /// <summary>
@@ -285,27 +272,5 @@ public class ComboManager : MonoBehaviour
                 comboDatas[i].comboCount = 0;
             }
         }
-    }
-
-    /// <summary>
-    /// コンボUIを表示する
-    /// </summary>
-    public void ShowComboUI()
-    {
-        int count = 0;
-        for (int i = 0; i < comboDatas.Length; i++)
-        {
-            if (comboDatas[i].comboName == comboText[i].text
-                && !comboDatas[i].isFrist)
-            {
-                comboText[i].enabled = true;
-                comboLvText[i].enabled = true;
-                comboNoText[i].enabled = true;
-            }
-            count = i + 1;
-            //Debug.Log("count" + count);
-            comboLvText[i].text = "Lv ." + comboDatas[i].comboLevel.ToString();
-        }
-        comboNoText[count - 1].text = "(" + count + "/" + comboDatas.Length + ")";
     }
 }
