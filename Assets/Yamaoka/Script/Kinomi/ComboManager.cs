@@ -172,40 +172,40 @@ public class ComboManager : MonoBehaviour
         {
             score += Kinomi.instance.score * (KinomiManager.instance.appleNum);
             KinomiManager.instance.appleNum = 0;
-            Debug.Log("AppleNum : " + KinomiManager.instance.appleNum);
-            Debug.Log("Apple : " + score);
+            //Debug.Log("AppleNum : " + KinomiManager.instance.appleNum);
+            //Debug.Log("Apple : " + score);
         }
         if (KinomiManager.instance.orengeNum >= comboData.useOrengeNum
             && KinomiManager.instance.hasOrenge)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.orengeNum);
             KinomiManager.instance.orengeNum = 0;
-            Debug.Log("OrengeNum : " + KinomiManager.instance.orengeNum);
-            Debug.Log("Orange : " + score);
+            //Debug.Log("OrengeNum : " + KinomiManager.instance.orengeNum);
+            //Debug.Log("Orange : " + score);
         }
         if (KinomiManager.instance.bananaNum >= comboData.useBananaNum
             && KinomiManager.instance.hasBanana)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.bananaNum);
             KinomiManager.instance.bananaNum = 0;
-            Debug.Log("BananaNum : " + KinomiManager.instance.bananaNum);
-            Debug.Log("Banana : " + score);
+            //Debug.Log("BananaNum : " + KinomiManager.instance.bananaNum);
+            //Debug.Log("Banana : " + score);
         }
         if (KinomiManager.instance.lemonNum >= comboData.useLemonNum
             && KinomiManager.instance.hasLemon)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.lemonNum);
             KinomiManager.instance.lemonNum = 0;
-            Debug.Log("LemonNum : " + KinomiManager.instance.lemonNum);
-            Debug.Log("Lemon : " + score);
+            //Debug.Log("LemonNum : " + KinomiManager.instance.lemonNum);
+            //Debug.Log("Lemon : " + score);
         }
         if (KinomiManager.instance.watermelonNum >= comboData.useWatermelonNum
             && KinomiManager.instance.hasWatermelon)
         {
             score += Kinomi.instance.score * (KinomiManager.instance.watermelonNum);
             KinomiManager.instance.watermelonNum = 0;
-            Debug.Log("WatermelonNum : " + KinomiManager.instance.watermelonNum);
-            Debug.Log("Watermelon : " + score);
+            //Debug.Log("WatermelonNum : " + KinomiManager.instance.watermelonNum);
+            //Debug.Log("Watermelon : " + score);
         }
 
         Debug.Log("OverKinomiScore : " + score);

@@ -224,8 +224,8 @@ public class KinomiManager : MonoBehaviour
             nowKinomiNum = maxKinomiNum;
         }
 
-        Debug.Log(kinomiData.name + "‚ğæ“¾");
-        Debug.Log("‚Á‚Ä‚¢‚é–Ø‚ÌÀ‚Ì”F" + playerKinomiDataList.Count);
+        //Debug.Log(kinomiData.name + "‚ğæ“¾");
+        //Debug.Log("‚Á‚Ä‚¢‚é–Ø‚ÌÀ‚Ì”F" + playerKinomiDataList.Count);
     }
 
     /// <summary>
