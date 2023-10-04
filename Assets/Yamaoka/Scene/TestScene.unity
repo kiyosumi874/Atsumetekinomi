@@ -2863,7 +2863,7 @@ MonoBehaviour:
   FrangeG: {fileID: 395864747}
   FrangeH: {fileID: 972817232}
   nowKinomiNum: 0
-  maxKinomiNum: 10
+  maxKinomiNum: 5
   createNearTime: 0
   createMiddleTime: 0
   createFarTime: 0
