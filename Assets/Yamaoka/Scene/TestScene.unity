@@ -2807,6 +2807,7 @@ MonoBehaviour:
   lemonNumText: {fileID: 340054626}
   watermelonNumText: {fileID: 1823860879}
   nowKinomiNum: 0
+  maxKinomiNum: 10
   appleNum: 0
   orengeNum: 0
   bananaNum: 0
@@ -5953,7 +5954,7 @@ CapsuleCollider:
   m_Radius: 0.5635376
   m_Height: 1.2830088
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5964291, z: 0.091049194}
+  m_Center: {x: 0, y: 0.64, z: 0.091049194}
 --- !u!1 &6334402007796081800
 GameObject:
   m_ObjectHideFlags: 0
