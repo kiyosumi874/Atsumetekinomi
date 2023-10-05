@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 /// <summary>
 /// コンボマネージャー
@@ -75,9 +76,10 @@ public class ComboManager : MonoBehaviour
         {
             if(comboDatas[i].useCombo)
             {
-                score = 
+                score =
                     comboDatas[i].UseCombo(comboDatas[i].isFrist, score);
                 SubtractionUseComboKinomi(comboDatas[i]);
+                ComboEffectManager.instance.SetComboName(comboDatas[i]);
             }
         }
         GetNotComboScore();
