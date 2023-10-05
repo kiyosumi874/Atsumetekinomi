@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// コンボ時のエフェクト
+/// </summary>
 public class ComboEffectSystem : MonoBehaviour
 {
-    [SerializeField]
-    string comboWard;
+    public List<string> comboWard = new List<string>();
     [SerializeField]
     GameObject comboObj;
     [SerializeField]
@@ -29,6 +31,7 @@ public class ComboEffectSystem : MonoBehaviour
     Text comboText;
     RectTransform comboRectTransform;
 
+    [SerializeField]
     int counter = 0;
     bool playingEffect = false;
     float scale;
@@ -38,16 +41,19 @@ public class ComboEffectSystem : MonoBehaviour
     Coroutine effectCol;
     Queue<int> comboOrder = new Queue<int>();
 
+    public static ComboEffectSystem instance;
+
     private void Awake()
     {
         comboText = comboObj.GetComponent<Text>();
         comboRectTransform = comboObj.GetComponent<RectTransform>();
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(comboOrder.Count == 0)
+        if (comboOrder.Count == 0)
         {
             return;
         }
@@ -55,20 +61,19 @@ public class ComboEffectSystem : MonoBehaviour
         timer += Time.deltaTime;
         // コンボ数が大きい程短時間で次の表示を行う
         var tempRate = Mathf.Clamp((1.0f - counter / 10.0f), 0.3f, 0.5f);
-        if(timer > effectDuration * tempRate)
+        if (timer > effectDuration * tempRate)
         {
             timer = 0;
             UpdateCombo(comboOrder.Dequeue());
         }
     }
 
-
     public void IncreaseCombo()
     {
         counter++;
         comboOrder.Enqueue(counter);
         // 初回のみ
-        if(counter == 1)
+        if (counter == 1)
         {
             UpdateCombo(comboOrder.Dequeue());
         }
@@ -81,7 +86,12 @@ public class ComboEffectSystem : MonoBehaviour
     void UpdateCombo(int comboCount)
     {
         Show();
-        comboText.text = comboCount + comboWard;
+        //comboText.text = comboCount + comboWard;
+        for(int i = 0; i < comboCount; i++)
+        {
+            comboText.text = comboWard[i] + comboCount;
+        }
+        //comboText.text = comboWard[comboCount] + comboCount;
 
         comboRectTransform.localRotation = Quaternion.Euler(0, 0, Random.Range(-15.0f, 15.0f));
 
