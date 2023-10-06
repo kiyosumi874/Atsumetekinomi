@@ -35,7 +35,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Displacement: 1
-    - _MaxDist: 50
+    - _MaxDist: 100
     - _MinDist: 10
     - _TessFactor: 50
     m_Colors:

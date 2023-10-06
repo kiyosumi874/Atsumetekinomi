@@ -8,7 +8,7 @@ Shader "Custom/SnowTrail"
         _NormalMap("Normalmap", 2D) = "bump" { }
         _SpecColor("Spec color", color) = (0.5, 0.5, 0.5, 0.5)
         _MinDist("Min Distance", Range(0.1, 50)) = 10
-        _MaxDist("Max Distance", Range(0.1, 50)) = 25
+        _MaxDist("Max Distance", Range(0.1, 100)) = 25
         _TessFactor("Tessellation", Range(1, 50)) = 10
         _Displacement("Displacement", Range(0, 1.0)) = 0.3
     }
