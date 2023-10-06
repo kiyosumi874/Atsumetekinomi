@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 1563795421}
   - component: {fileID: 1563795420}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Snow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
