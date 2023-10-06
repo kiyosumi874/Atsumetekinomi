@@ -94,10 +94,15 @@ public class Snow : MonoBehaviour
         mr.material.SetVector("_MoveTotal", move);
         mr.material.SetVector("_CamUp", Camera.main.transform.up);
         mr.material.SetVector("_TargetPosition", targetPosition);
-        // 生成した雪を動かす
-        float x = 0f;
+        // 生成した雪を降らせる
+        //float x = 0f;
+        //float y = -2f;
+        //float z = 0f;
+        // x, zに値を入れて、雪を揺らす
+        // PerlinNoise で揺らぎを加え、風を表現する
+        float x = (Mathf.PerlinNoise(0f, Time.time * 0.1f) - 0.5f) * 10f;
         float y = -2f;
-        float z = 0f;
+        float z = (Mathf.PerlinNoise(Time.time * 0.1f, 0f) - 0.5f) * 10f;
         move += new Vector3(x, y, z) * Time.deltaTime;
         // 循環させる(数字が永遠に大きくなってオーバーフローを起こすため)
         move.x = Mathf.Repeat(move.x, range * 2f);

@@ -67,6 +67,9 @@ Shader "Custom/Snow"
                 float3 diff = _CamUp * _Size;
                 float3 finalposition;
                 float3 tv0 = mv;
+                // ê·ÇóhÇÁÇ∑(sinÇèdÇÀçáÇÌÇπÇÈ)
+                tv0.x += sin(mv.x * 0.2) * sin(mv.y * 0.3) * sin(mv.x * 0.9) * sin(mv.y * 0.8);
+                tv0.z += sin(mv.x * 0.1) * sin(mv.y * 0.2) * sin(mv.x * 0.8) * sin(mv.y * 1.2);  
                 {
                     float3 eyeVector = ObjSpaceViewDir(float4(tv0, 0));
                     float3 sideVector = normalize(cross(eyeVector, diff));
