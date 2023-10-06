@@ -100,6 +100,26 @@ public class ComboManager : MonoBehaviour
                 KinomiManager.instance.orengeNum -= comboData.useOrengeNum;
                 KinomiManager.instance.bananaNum -= comboData.useBananaNum;
                 break;
+            case "リンゴレモン":
+                KinomiManager.instance.appleNum -= comboData.useAppleNum;
+                KinomiManager.instance.lemonNum -= comboData.useLemonNum;
+                break;
+            case "レモンバナナ":
+                KinomiManager.instance.lemonNum -= comboData.useLemonNum;
+                KinomiManager.instance.bananaNum -= comboData.useBananaNum;
+                break;
+            case "まるきのみ":
+                KinomiManager.instance.appleNum -= comboData.useAppleNum;
+                KinomiManager.instance.orengeNum -= comboData.useOrengeNum;
+                KinomiManager.instance.watermelonNum -= comboData.useWatermelonNum;
+                break;
+            case "ぜんぶ":
+                KinomiManager.instance.appleNum -= comboData.useAppleNum;
+                KinomiManager.instance.orengeNum -= comboData.useOrengeNum;
+                KinomiManager.instance.bananaNum -= comboData.useBananaNum;
+                KinomiManager.instance.lemonNum -= comboData.useLemonNum;
+                KinomiManager.instance.watermelonNum -= comboData.useWatermelonNum;
+                break;
         }
     }
 
@@ -254,6 +274,75 @@ public class ComboManager : MonoBehaviour
             else
             {
                 if (comboDatas[i].comboName == "オレンジバナナ")
+                {
+                    comboDatas[i].useCombo = false;
+                }
+            }
+
+
+            if (KinomiManager.instance.hasApple
+                && KinomiManager.instance.hasLemon)
+            {
+                if (comboDatas[i].comboName == "リンゴレモン")
+                {
+                    comboDatas[i].useCombo = true;
+                }
+            }
+            else
+            {
+                if (comboDatas[i].comboName == "リンゴレモン")
+                {
+                    comboDatas[i].useCombo = false;
+                }
+            }
+
+            if (KinomiManager.instance.hasBanana
+                && KinomiManager.instance.hasLemon)
+            {
+                if (comboDatas[i].comboName == "レモンバナナ")
+                {
+                    comboDatas[i].useCombo = true;
+                }
+            }
+            else
+            {
+                if (comboDatas[i].comboName == "レモンバナナ")
+                {
+                    comboDatas[i].useCombo = false;
+                }
+            }
+
+            if (KinomiManager.instance.hasApple
+                && KinomiManager.instance.hasOrenge
+                && KinomiManager.instance.hasWatermelon)
+            {
+                if (comboDatas[i].comboName == "まるきのみ")
+                {
+                    comboDatas[i].useCombo = true;
+                }
+            }
+            else
+            {
+                if (comboDatas[i].comboName == "まるきのみ")
+                {
+                    comboDatas[i].useCombo = false;
+                }
+            }
+
+            if (KinomiManager.instance.hasApple
+                && KinomiManager.instance.hasOrenge
+                && KinomiManager.instance.hasBanana
+                && KinomiManager.instance.hasLemon
+                && KinomiManager.instance.hasWatermelon)
+            {
+                if (comboDatas[i].comboName == "ぜんぶ")
+                {
+                    comboDatas[i].useCombo = true;
+                }
+            }
+            else
+            {
+                if (comboDatas[i].comboName == "ぜんぶ")
                 {
                     comboDatas[i].useCombo = false;
                 }
