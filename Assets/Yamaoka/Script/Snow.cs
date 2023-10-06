@@ -94,5 +94,14 @@ public class Snow : MonoBehaviour
         mr.material.SetVector("_MoveTotal", move);
         mr.material.SetVector("_CamUp", Camera.main.transform.up);
         mr.material.SetVector("_TargetPosition", targetPosition);
+        // 生成した雪を動かす
+        float x = 0f;
+        float y = -2f;
+        float z = 0f;
+        move += new Vector3(x, y, z) * Time.deltaTime;
+        // 循環させる(数字が永遠に大きくなってオーバーフローを起こすため)
+        move.x = Mathf.Repeat(move.x, range * 2f);
+        move.y = Mathf.Repeat(move.y, range * 2f);
+        move.z = Mathf.Repeat(move.z, range * 2f);
     }
 }
