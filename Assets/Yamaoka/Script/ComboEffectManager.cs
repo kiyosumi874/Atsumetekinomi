@@ -73,7 +73,7 @@ public class ComboEffectManager : MonoBehaviour
         //counter++;
         comboOrder.Enqueue(counter);
         // 初回のみ
-        if (counter == 1)
+        if (counter == 0)
         {
             UpdateEffectData(comboOrder.Dequeue());
         }
@@ -87,6 +87,7 @@ public class ComboEffectManager : MonoBehaviour
     {
         Show();
         comboText.text = comboWards[comboCount];
+        Debug.Log(comboText.text);
         comboRectTransform.localRotation = Quaternion.Euler(0, 0, Random.Range(-15.0f, 15.0f));
 
         // 前のコンボ演出が終了していない場合
@@ -121,11 +122,12 @@ public class ComboEffectManager : MonoBehaviour
     {
         for (int i = 0; i < comboWards.Count; i++)
         {
+            //counter = i;
             if (comboWards[i] == comboDatas.comboName)
             {
                 counter = i;
-                comboText.text = comboWards[i];
-
+                //comboText.text = comboWards[i];
+                //Debug.Log(comboWards[i]);
                 IncreaseCombo();
             }
         }
