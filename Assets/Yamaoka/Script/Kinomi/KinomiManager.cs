@@ -86,6 +86,7 @@ public class KinomiManager : MonoBehaviour
 
     private void Update()
     {
+        nowKinomiNum = appleNum + orengeNum + bananaNum + lemonNum + watermelonNum;
         CheckHasKinomi();
         SetMinAllKinomisNum();
         allKinomiNumText.text = nowKinomiNum.ToString();
@@ -216,7 +217,7 @@ public class KinomiManager : MonoBehaviour
                 watermelonNum++;
             }
 
-            nowKinomiNum++;
+            //nowKinomiNum++;
         }
 
         if(nowKinomiNum >= maxKinomiNum)
@@ -264,7 +265,7 @@ public class KinomiManager : MonoBehaviour
                 {
                     watermelonNum -= count;
                 }
-                nowKinomiNum -= count;
+                //nowKinomiNum -= count;
                 Debug.Log(data.name + "‚ğ " + count + "ŒÂƒƒXƒg");
                 Debug.Log("‚Á‚Ä‚¢‚é–Ø‚ÌÀ‚Ì”F" + playerKinomiDataList.Count);
                 break;
