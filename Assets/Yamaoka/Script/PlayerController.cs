@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection;   // êiçsï˚å¸
 
+    public GameObject footPrintPrefab;  // ë´ê’
+    public Transform frontPos;
+    public Transform backPos;
+
+    public float time = 0;
+
     private void Start()
     {
         this.rb = GetComponent<Rigidbody>();
@@ -20,6 +26,18 @@ public class PlayerController : MonoBehaviour
     {
         inputAxis.x = Input.GetAxis("Horizontal");
         inputAxis.z = Input.GetAxis("Vertical");
+
+        if(inputAxis != Vector3.zero)
+        {
+            time += Time.deltaTime;
+        }
+        
+        if(time > 0.35f)
+        {
+            time = 0.0f;
+            Instantiate(footPrintPrefab, frontPos.position, transform.rotation);
+            Instantiate(footPrintPrefab, backPos.position, transform.rotation);
+        }
     }
 
     private void FixedUpdate()
