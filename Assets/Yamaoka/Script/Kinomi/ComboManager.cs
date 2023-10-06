@@ -34,6 +34,7 @@ public class ComboManager : MonoBehaviour
         DeleteCombo();
         UpdateComboLevel();
         UIManager.instance.ShowComboUI(comboDatas);
+        UIManager.instance.ChangeComboUIScale(comboDatas);
     }
 
     /// <summary>

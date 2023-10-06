@@ -87,7 +87,7 @@ public class ComboEffectManager : MonoBehaviour
     {
         Show();
         comboText.text = comboWards[comboCount];
-        Debug.Log(comboText.text);
+        //Debug.Log(comboText.text);
         comboRectTransform.localRotation = Quaternion.Euler(0, 0, Random.Range(-15.0f, 15.0f));
 
         // 前のコンボ演出が終了していない場合
