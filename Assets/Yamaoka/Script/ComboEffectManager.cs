@@ -8,6 +8,7 @@ public class ComboEffectManager : MonoBehaviour
     public List<string> comboWards = new List<string>();
     public GameObject comboObj;
     public Text comboText;
+    public Text firstBonusText;
     RectTransform comboRectTransform;
 
     [SerializeField]
@@ -41,6 +42,7 @@ public class ComboEffectManager : MonoBehaviour
 
     private void Awake()
     {
+        firstBonusText.enabled = false;
         comboText = comboObj.GetComponent<Text>();
         comboRectTransform = comboObj.GetComponent<RectTransform>();
         instance = this;
@@ -128,7 +130,25 @@ public class ComboEffectManager : MonoBehaviour
                 counter = i;
                 //comboText.text = comboWards[i];
                 //Debug.Log(comboWards[i]);
+                SetFirstComboText(comboDatas);
                 IncreaseCombo();
+            }
+        }
+    }
+
+    public void SetFirstComboText(ComboData comboDatas)
+    {
+        for (int i = 0; i < comboWards.Count; i++)
+        {
+            if (comboDatas.isFrist)
+            {
+                firstBonusText.enabled = true;
+                firstBonusText.text = "FirstBonus!!!";
+            }
+            else
+            {
+                firstBonusText.enabled = false;
+                firstBonusText.text = "";
             }
         }
     }
@@ -164,11 +184,13 @@ public class ComboEffectManager : MonoBehaviour
     void Show()
     {
         comboText.enabled = true;
+        //firstBonusText.enabled = true;
     }
 
     void Hide()
     {
         comboText.enabled = false;
+        firstBonusText.enabled = false;
     }
 
     void Clear()
