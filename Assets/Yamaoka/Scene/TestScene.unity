@@ -1224,14 +1224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSoundTrack: 10
   soundDatas:
-  - name: "\u30C0\u30A4\u30D3\u30F3\u30B0"
-    audioClip: {fileID: 8300000, guid: ba41c75feb34351428b551e2e27a0627, type: 3}
+  - name: "\u30B3\u30F3\u30DC"
+    audioClip: {fileID: 8300000, guid: 9aa8a5135c80a8c4cbc00811edcddbb6, type: 3}
     volume: 1
-    playedTime: 0
-  - name: "\u6253\u3061\u4E0A\u3052\u82B1\u706B"
-    audioClip: {fileID: 8300000, guid: a37472644607a3b458be18aeab5ef4e2, type: 3}
-    volume: 1
-    playedTime: 0
+    playedTime: 0.5
   bgmSoundDatas: []
 --- !u!4 &216602461
 Transform:
@@ -2242,7 +2238,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: combo
+  m_Text: comboEffect
 --- !u!222 &342402469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3618,7 +3614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: combo
+  m_Text: GetScoreEffect
 --- !u!222 &528979270
 CanvasRenderer:
   m_ObjectHideFlags: 0

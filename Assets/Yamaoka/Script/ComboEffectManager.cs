@@ -103,6 +103,7 @@ public class ComboEffectManager : MonoBehaviour
     /// <param name="comboCount"></param>
     public void UpdateEffectData(int comboCount)
     {
+        SoundManager.instance.PlaySound("ƒRƒ“ƒ{");
         Show();
         comboText.text = effectDatas[comboCount].comboWard;
         comboText.color = effectDatas[comboCount].color;
