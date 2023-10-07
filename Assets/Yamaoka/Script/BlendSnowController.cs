@@ -5,32 +5,24 @@ using UnityEngine;
 public class BlendSnowController : MonoBehaviour
 {
     public float speed = 0.000001f;    // 雪が積もる速さ
-    private float amount;      // 積雪量
-    public float max = 1.0f;
-    public Material mat;
+    private float amount;        // 積雪量
+    public float max = 1.0f;     // 最大積雪量
+    public Material mat;         // マテリアルを取得
 
     // Start is called before the first frame update
     void Start()
     {
+        // 最初からある程度積もった状態から始める
         amount = 0.004f;
     }
-
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if(amount <= 1f)
-    //    {
-    //        amount += speed;
-    //        // マテリアルを取得し、シェーダー定数を設定
-    //        this.GetComponent<Renderer>().material.SetFloat("_Amount", amount);
-    //    }
-    //}
 
     private void FixedUpdate()
     {
         if(amount < max)
         {
+            // 積雪量の計算
             amount = amount + speed;
+            // シェーダー定数設定
             mat.SetFloat("_Amount", amount);
         }
     }
