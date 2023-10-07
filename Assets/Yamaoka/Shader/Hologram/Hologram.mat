@@ -30,5 +30,5 @@ Material:
     - _WorldScale: 20
     m_Colors:
     - _RimColor: {r: 1, g: 0.5203069, b: 0, a: 1}
-    - _TintColor: {r: 1, g: 0.9964248, b: 0, a: 1}
+    - _TintColor: {r: 1, g: 0.12588602, b: 0, a: 1}
   m_BuildTextureStacks: []
