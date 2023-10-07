@@ -3,8 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 表示するコンボエフェクトのデータ
+/// </summary>
+[System.Serializable]
+public class ComboEffectData
+{
+    public string comboWard;
+    public Color color;
+}
+
+/// <summary>
+/// コンボエフェクト制御クラス
+/// </summary>
 public class ComboEffectManager : MonoBehaviour
 {
+    public List<ComboEffectData> effectDatas = new List<ComboEffectData>();
     public List<string> comboWards = new List<string>();
     public GameObject comboObj;
     public Text comboText;
@@ -88,7 +102,9 @@ public class ComboEffectManager : MonoBehaviour
     public void UpdateEffectData(int comboCount)
     {
         Show();
-        comboText.text = comboWards[comboCount];
+        //comboText.text = comboWards[comboCount];
+        comboText.text = effectDatas[comboCount].comboWard;
+        comboText.color = effectDatas[comboCount].color;
         //Debug.Log(comboText.text);
         comboRectTransform.localRotation = Quaternion.Euler(0, 0, Random.Range(-15.0f, 15.0f));
 
@@ -122,10 +138,18 @@ public class ComboEffectManager : MonoBehaviour
     /// <param name="comboDatas">コンボデータ</param>
     public void SetComboName(ComboData comboDatas)
     {
-        for (int i = 0; i < comboWards.Count; i++)
+        for (int i = 0; i < effectDatas.Count; i++)
         {
             //counter = i;
-            if (comboWards[i] == comboDatas.comboName)
+            //if (comboWards[i] == comboDatas.comboName)
+            //{
+            //    counter = i;
+            //    //comboText.text = comboWards[i];
+            //    //Debug.Log(comboWards[i]);
+            //    SetFirstComboText(comboDatas);
+            //    IncreaseCombo();
+            //}
+            if (effectDatas[i].comboWard == comboDatas.comboName)
             {
                 counter = i;
                 //comboText.text = comboWards[i];
