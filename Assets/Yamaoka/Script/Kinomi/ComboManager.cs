@@ -81,7 +81,6 @@ public class ComboManager : MonoBehaviour
                     comboDatas[i].UseCombo(comboDatas[i].isFrist, score);
                 SubtractionUseComboKinomi(comboDatas[i]);
                 ComboEffectManager.instance.SetComboName(comboDatas[i]);
-                //ComboEffectManager.instance.SetFirstComboText(comboDatas[i]);
             }
         }
         GetNotComboScore();
@@ -169,12 +168,9 @@ public class ComboManager : MonoBehaviour
             || KinomiManager.instance.watermelonNum >= 1)
         {
             kinomiScore += OverKinomiScore();
-            //foreach (ComboData data in comboDatas)
-            //{
-            //    kinomiScore += OverKinomiScore(data);
-            //}
         }
         Debug.Log("取得スコア(木の実のみ)：" + kinomiScore);
+        ComboEffectManager.instance.SetNoComboEffect(kinomiScore);
         // 現在のスコアに加算
         score += kinomiScore;
         Debug.Log("合計スコア：" + score);

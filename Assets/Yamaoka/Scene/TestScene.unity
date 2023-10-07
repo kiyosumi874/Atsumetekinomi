@@ -3574,7 +3574,7 @@ RectTransform:
   m_GameObject: {fileID: 528979267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 838806162}
@@ -10549,6 +10549,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDatas:
+  - comboWard: "\u30CE\u30FC\u30B3\u30F3\u30DC"
+    color: {r: 1, g: 1, b: 1, a: 1}
+    firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+    normalScore: 
+    effect: 
+    isFirst: 0
   - comboWard: "\u30EA\u30F3\u30B4\u30EC\u30E2\u30F3"
     color: {r: 0.4048233, g: 1, b: 0, a: 1}
     firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"

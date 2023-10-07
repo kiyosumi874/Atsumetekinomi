@@ -14,7 +14,7 @@ public class ComboEffectData
     public string firstBonus;   // 初回ボーナス時の表示エフェクト設定用
     public string normalScore;  // 通常時の表示エフェクト設定用
     public string effect;        // 表示するエフェクト
-    public bool isFirst = true; // 初回かどうかを判定
+    public bool isFirst = true;  // 初回かどうかを判定
 }
 
 /// <summary>
@@ -135,6 +135,28 @@ public class ComboEffectManager : MonoBehaviour
         }
 
         effectCol = StartCoroutine(PlayEffect(effectDuration));
+    }
+
+    /// <summary>
+    /// コンボが発動しないときのエフェクト
+    /// </summary>
+    /// <param name="score">取得するスコア</param>
+    public void SetNoComboEffect(int score)
+    {
+        // effectDatas[0](ノーコンボデータ)を設定
+        effectDatas[0].effect = "スコア  +" + score;
+        effectDatas[0].comboWard = "きのみだけ";
+        // 取得できるスコアが0以上の時
+        if(score != 0)
+        {
+            // effectDatas[0](ノーコンボデータ)エフェクトを再生
+            counter = 0;
+            IncreaseCombo();
+        }
+        else
+        {
+            return;
+        }
     }
 
     /// <summary>
