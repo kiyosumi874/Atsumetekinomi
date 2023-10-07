@@ -76,7 +76,7 @@ public class ComboEffectManager : MonoBehaviour
 
         timer += Time.deltaTime;
         // コンボ数が大きい程短時間で次の表示を行う
-        var tempRate = Mathf.Clamp((1.0f - counter/* / 10.0f*/), 2.5f, 5.0f);
+        var tempRate = Mathf.Clamp((1.0f - counter / 10.0f), 1.0f, 5.0f);
         if (timer > effectDuration * tempRate)
         {
             timer = 0;
@@ -153,6 +153,8 @@ public class ComboEffectManager : MonoBehaviour
             // effectDatas[0](ノーコンボデータ)エフェクトを再生
             counter = 0;
             IncreaseCombo();
+
+            Debug.Log("NO COMBOOOOOOOOOOOOOOOOOOOO");
         }
         else
         {
@@ -166,7 +168,7 @@ public class ComboEffectManager : MonoBehaviour
     /// <param name="comboDatas">コンボデータ</param>
     public void SetComboName(ComboData comboDatas)
     {
-        for (int i = 0; i < effectDatas.Count; i++)
+        for (int i = 1; i < effectDatas.Count; i++)
         {
             if (effectDatas[i].comboWard == comboDatas.comboName)
             {
@@ -183,7 +185,7 @@ public class ComboEffectManager : MonoBehaviour
     /// <param name="comboDatas">コンボデータ</param>
     public void SetFirstComboText(ComboData comboDatas)
     {
-        for (int i = 0; i < effectDatas.Count; i++)
+        for (int i = 1; i < effectDatas.Count; i++)
         {
             // 通常時に表示するスコアの値を計算
             effectDatas[i].normalScore =

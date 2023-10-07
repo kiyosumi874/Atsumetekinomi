@@ -54,6 +54,9 @@ public class KinomiManager : MonoBehaviour
     [SerializeField]
     private KinomiData kinomiData;    // 木の実データ
 
+    [SerializeField]
+    private List<Kinomi> kinomis = new List<Kinomi>();
+
     public Text allKinomiNumText;
     public Text appleNumText;
     public Text orengeNumText;
@@ -76,12 +79,19 @@ public class KinomiManager : MonoBehaviour
     public bool hasLemon = false;
     public bool hasWatermelon = false;
 
+    public int appleScore = 0;
+    public int orengeScore = 0;
+    public int bananaScore = 0;
+    public int lemonScore = 0;
+    public int watermelonScore = 0;
+
     public static KinomiManager instance;   // インスタンス
 
     private void Awake()
     {
         LoadKinomiSourceData();
         instance = this;
+        SetKinomisScore();
     }
 
     private void Update()
@@ -124,6 +134,34 @@ public class KinomiManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// 各木の実のスコアを設定
+    /// </summary>
+    public void SetKinomisScore()
+    {
+        for (int i = 0; i < kinomis.Count; i++)
+        {
+            switch (kinomis[i].kinomiName)
+            {
+                case "リンゴ":
+                    appleScore = kinomis[i].GetKinomiScore();
+                    break;
+                case "オレンジ":
+                    orengeScore = kinomis[i].GetKinomiScore();
+                    break;
+                case "バナナ":
+                    bananaScore = kinomis[i].GetKinomiScore();
+                    break;
+                case "レモン":
+                    lemonScore = kinomis[i].GetKinomiScore();
+                    break;
+                case "スイカ":
+                    watermelonScore = kinomis[i].GetKinomiScore();
+                    break;
+            }
+        }
     }
 
     /// <summary>
@@ -216,17 +254,12 @@ public class KinomiManager : MonoBehaviour
             {
                 watermelonNum++;
             }
-
-            //nowKinomiNum++;
         }
 
         if(nowKinomiNum >= maxKinomiNum)
         {
             nowKinomiNum = maxKinomiNum;
         }
-
-        //Debug.Log(kinomiData.name + "を取得");
-        //Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
     }
 
     /// <summary>

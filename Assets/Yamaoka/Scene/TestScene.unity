@@ -5104,6 +5104,12 @@ MonoBehaviour:
     id: 0
     name: 
     count: 0
+  kinomis:
+  - {fileID: 3296740975011356205, guid: 36484d2f27506154daafb22f7c9cf87a, type: 3}
+  - {fileID: 8589993294039911700, guid: 3fa1ecdaedeac5646a062126918c9997, type: 3}
+  - {fileID: 8645891307123268321, guid: f98f06962b5f8b842901323d3b008ae7, type: 3}
+  - {fileID: 2872180592048825055, guid: df9ebc3ab3b5e524ca1cadf2b1a4734e, type: 3}
+  - {fileID: 9024584758750912642, guid: 7e89d40f4dcf45446b2f1ecf5338a228, type: 3}
   allKinomiNumText: {fileID: 1999389264}
   appleNumText: {fileID: 1538181639}
   orengeNumText: {fileID: 844952797}
@@ -5122,6 +5128,11 @@ MonoBehaviour:
   hasBanana: 0
   hasLemon: 0
   hasWatermelon: 0
+  appleScore: 0
+  orengeScore: 0
+  bananaScore: 0
+  lemonScore: 0
+  watermelonScore: 0
 --- !u!114 &1024004764
 MonoBehaviour:
   m_ObjectHideFlags: 0

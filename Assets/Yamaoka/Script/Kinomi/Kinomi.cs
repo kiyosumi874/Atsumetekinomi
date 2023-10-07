@@ -18,8 +18,7 @@ public class Kinomi : MonoBehaviour
         Far,     // ‘ƒ‚©‚ç‰“‚¢
     }
 
-    [SerializeField]
-    private string kinomiName;  // –Ø‚ÌÀ‚Ì–¼‘O
+    public string kinomiName;  // –Ø‚ÌÀ‚Ì–¼‘O
     public GenerationLocation generatLocation;  // –Ø‚ÌÀ‚Ì¶¬êŠ
 
     public int score = 50;
@@ -35,6 +34,11 @@ public class Kinomi : MonoBehaviour
     {
         // –Ø‚ÌÀ‚ğY²‰ñ“]‚³‚¹‚é
         this.gameObject.transform.Rotate(new Vector3(0, 100, 0) * Time.deltaTime);
+    }
+
+    public int GetKinomiScore()
+    {
+        return score;
     }
 
     public void OnCollisionEnter(Collision collision)

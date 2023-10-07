@@ -79,7 +79,7 @@ public class ComboManager : MonoBehaviour
             {
                 score =
                     comboDatas[i].UseCombo(comboDatas[i].isFrist, score);
-                SubtractionUseComboKinomi(comboDatas[i]);
+                //SubtractionUseComboKinomi(comboDatas[i]);
                 ComboEffectManager.instance.SetComboName(comboDatas[i]);
             }
         }
@@ -135,27 +135,27 @@ public class ComboManager : MonoBehaviour
         {
             if (KinomiManager.instance.appleNum >= 1 )
             {
-                kinomiScore += Kinomi.instance.score * KinomiManager.instance.appleNum;
+                kinomiScore += KinomiManager.instance.appleScore * KinomiManager.instance.appleNum;
                 KinomiManager.instance.appleNum = 0;
             }
             if (KinomiManager.instance.orengeNum >= 1)
             {
-                kinomiScore += Kinomi.instance.score * KinomiManager.instance.orengeNum;
+                kinomiScore += KinomiManager.instance.orengeScore * KinomiManager.instance.orengeNum;
                 KinomiManager.instance.orengeNum = 0;
             }
             if (KinomiManager.instance.bananaNum >= 1 )
             {
-                kinomiScore += Kinomi.instance.score * KinomiManager.instance.bananaNum;
+                kinomiScore += KinomiManager.instance.bananaScore * KinomiManager.instance.bananaNum;
                 KinomiManager.instance.bananaNum = 0;
             }
             if(KinomiManager.instance.lemonNum >= 1)
             {
-                kinomiScore += Kinomi.instance.score * KinomiManager.instance.lemonNum;
+                kinomiScore += KinomiManager.instance.lemonScore * KinomiManager.instance.lemonNum;
                 KinomiManager.instance.lemonNum = 0;
             }
             if (KinomiManager.instance.watermelonNum >= 1)
             {
-                kinomiScore += Kinomi.instance.score * KinomiManager.instance.watermelonNum;
+                kinomiScore += KinomiManager.instance.watermelonScore * KinomiManager.instance.watermelonNum;
                 KinomiManager.instance.watermelonNum = 0;
             }
         }
@@ -170,9 +170,9 @@ public class ComboManager : MonoBehaviour
             kinomiScore += OverKinomiScore();
         }
         Debug.Log("取得スコア(木の実のみ)：" + kinomiScore);
-        ComboEffectManager.instance.SetNoComboEffect(kinomiScore);
         // 現在のスコアに加算
         score += kinomiScore;
+        ComboEffectManager.instance.SetNoComboEffect(kinomiScore);
         Debug.Log("合計スコア：" + score);
     }
 
@@ -189,7 +189,7 @@ public class ComboManager : MonoBehaviour
         //    && KinomiManager.instance.hasApple)
         if (KinomiManager.instance.appleNum >= 1)
         {
-            score += Kinomi.instance.score * (KinomiManager.instance.appleNum);
+            score += KinomiManager.instance.appleScore * (KinomiManager.instance.appleNum - 1);
             KinomiManager.instance.appleNum = 0;
             //Debug.Log("AppleNum : " + KinomiManager.instance.appleNum);
             //Debug.Log("Apple : " + score);
@@ -198,7 +198,7 @@ public class ComboManager : MonoBehaviour
         //    && KinomiManager.instance.hasOrenge)
         if (KinomiManager.instance.orengeNum >= 1)
         {
-            score += Kinomi.instance.score * (KinomiManager.instance.orengeNum);
+            score += KinomiManager.instance.orengeScore * (KinomiManager.instance.orengeNum - 1);
             KinomiManager.instance.orengeNum = 0;
             //Debug.Log("OrengeNum : " + KinomiManager.instance.orengeNum);
             //Debug.Log("Orange : " + score);
@@ -207,7 +207,7 @@ public class ComboManager : MonoBehaviour
         //    && KinomiManager.instance.hasBanana)
         if (KinomiManager.instance.bananaNum >= 1)
         {
-            score += Kinomi.instance.score * (KinomiManager.instance.bananaNum);
+            score += KinomiManager.instance.bananaScore * (KinomiManager.instance.bananaNum - 1);
             KinomiManager.instance.bananaNum = 0;
             //Debug.Log("BananaNum : " + KinomiManager.instance.bananaNum);
             //Debug.Log("Banana : " + score);
@@ -216,7 +216,7 @@ public class ComboManager : MonoBehaviour
         //    && KinomiManager.instance.hasLemon)
         if (KinomiManager.instance.lemonNum >= 1)
         {
-            score += Kinomi.instance.score * (KinomiManager.instance.lemonNum);
+            score += KinomiManager.instance.lemonScore * (KinomiManager.instance.lemonNum - 1);
             KinomiManager.instance.lemonNum = 0;
             //Debug.Log("LemonNum : " + KinomiManager.instance.lemonNum);
             //Debug.Log("Lemon : " + score);
@@ -225,12 +225,12 @@ public class ComboManager : MonoBehaviour
         //    && KinomiManager.instance.hasWatermelon)
         if (KinomiManager.instance.watermelonNum >= 1)
         {
-            score += Kinomi.instance.score * (KinomiManager.instance.watermelonNum);
+            score += KinomiManager.instance.watermelonScore * (KinomiManager.instance.watermelonNum - 1);
             KinomiManager.instance.watermelonNum = 0;
             //Debug.Log("WatermelonNum : " + KinomiManager.instance.watermelonNum);
             //Debug.Log("Watermelon : " + score);
         }
-
+        //ComboEffectManager.instance.SetNoComboEffect(score);
         Debug.Log("OverKinomiScore : " + score);
         return score;
     }
@@ -261,10 +261,8 @@ public class ComboManager : MonoBehaviour
     {
         for (int i = 0; i < comboDatas.Length; i++)
         {
-            //if(KinomiManager.instance.hasApple
-            //    && KinomiManager.instance.hasOrenge)
-            if (KinomiManager.instance.appleNum >= 1
-                && KinomiManager.instance.orengeNum >= 1)
+            if (KinomiManager.instance.hasApple
+                && KinomiManager.instance.hasOrenge)
             {
                 if(comboDatas[i].comboName == "リンゴオレンジ")
                 {
