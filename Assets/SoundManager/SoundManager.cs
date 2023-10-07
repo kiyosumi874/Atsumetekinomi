@@ -181,12 +181,12 @@ public class SoundManager : MonoBehaviour
         if(soundDictionary.TryGetValue(name, out var soundData))
         {
             // 音源が再生されている場合
-            if(Time.realtimeSinceStartup - soundData.playedTime < soundData.audioClip.length)
-            {
-                return;
-            }
-            // 次回の再生用に、今回の再生時間を保持する
-            soundData.playedTime = Time.realtimeSinceStartup;
+            //if(Time.realtimeSinceStartup - soundData.playedTime < soundData.audioClip.length)
+            //{
+            //    return;
+            //}
+            //// 次回の再生用に、今回の再生時間を保持する
+            //soundData.playedTime = Time.realtimeSinceStartup;
             // 音源が見つかったら、再生
             PlaySound(soundData.audioClip, soundData.volume);
         }
