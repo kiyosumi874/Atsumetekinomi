@@ -10516,6 +10516,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29dc73852adbe1418d92cb3e2d81d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectDatas:
+  - comboWard: "\u30EA\u30F3\u30B4\u30EC\u30E2\u30F3"
+    color: {r: 0.4048233, g: 1, b: 0, a: 1}
+    firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+  - comboWard: "\u30EA\u30F3\u30B4\u30AA\u30EC\u30F3\u30B8"
+    color: {r: 1, g: 0.20258237, b: 0, a: 1}
+    firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+  - comboWard: "\u30AA\u30EC\u30F3\u30B8\u30D0\u30CA\u30CA"
+    color: {r: 0, g: 0.3028021, b: 1, a: 1}
+    firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+  - comboWard: "\u30EC\u30E2\u30F3\u30D0\u30CA\u30CA"
+    color: {r: 1, g: 0.96657693, b: 0, a: 1}
+    firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+  - comboWard: "\u307E\u308B\u304D\u306E\u307F"
+    color: {r: 0.85471106, g: 0, b: 1, a: 1}
+    firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+  - comboWard: "\u305C\u3093\u3076"
+    color: {r: 0, g: 0.9529972, b: 1, a: 1}
+    firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
   comboWards:
   - "\u30EA\u30F3\u30B4\u30EC\u30E2\u30F3"
   - "\u30EA\u30F3\u30B4\u30AA\u30EC\u30F3\u30B8"

@@ -11,6 +11,10 @@ public class ComboEffectData
 {
     public string comboWard;
     public Color color;
+    public string firstBonus;
+    public string normalScore;
+    public string score;
+    public bool isFirst = true;
 }
 
 /// <summary>
@@ -89,10 +93,10 @@ public class ComboEffectManager : MonoBehaviour
         //counter++;
         comboOrder.Enqueue(counter);
         // èââÒÇÃÇ›
-        if (counter == 0)
-        {
-            UpdateEffectData(comboOrder.Dequeue());
-        }
+        //if (counter == 0)
+        //{
+        //    UpdateEffectData(comboOrder.Dequeue());
+        //}
     }
 
     /// <summary>
@@ -105,6 +109,10 @@ public class ComboEffectManager : MonoBehaviour
         //comboText.text = comboWards[comboCount];
         comboText.text = effectDatas[comboCount].comboWard;
         comboText.color = effectDatas[comboCount].color;
+
+        firstBonusText.text = effectDatas[comboCount].score;
+        firstBonusText.color = effectDatas[comboCount].color;
+        effectDatas[comboCount].isFirst = false;
         //Debug.Log(comboText.text);
         comboRectTransform.localRotation = Quaternion.Euler(0, 0, Random.Range(-15.0f, 15.0f));
 
@@ -162,17 +170,22 @@ public class ComboEffectManager : MonoBehaviour
 
     public void SetFirstComboText(ComboData comboDatas)
     {
-        for (int i = 0; i < comboWards.Count; i++)
+        for (int i = 0; i < effectDatas.Count; i++)
         {
-            if (comboDatas.isFrist)
+            effectDatas[i].normalScore =
+                    "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
+            if (effectDatas[i].isFirst)
             {
-                firstBonusText.enabled = true;
-                firstBonusText.text = "FirstBonus!!!";
+                effectDatas[i].score = effectDatas[i].firstBonus + "   +" + comboDatas.firstComboScore;
+                //firstBonusText.color = effectDatas[i].color;
+                Debug.Log("TRUEEEEEEEEEEEEEEEEEEEEEEEE");
             }
             else
             {
-                firstBonusText.enabled = false;
-                firstBonusText.text = "";
+                effectDatas[i].score = effectDatas[i].normalScore;
+                //effectDatas[i].normalScore = 
+                //    "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
+                Debug.Log("FALSEEEEEEEEEEEEEEEEEEEEEEEE");
             }
         }
     }
@@ -208,7 +221,7 @@ public class ComboEffectManager : MonoBehaviour
     void Show()
     {
         comboText.enabled = true;
-        //firstBonusText.enabled = true;
+        firstBonusText.enabled = true;
     }
 
     void Hide()
