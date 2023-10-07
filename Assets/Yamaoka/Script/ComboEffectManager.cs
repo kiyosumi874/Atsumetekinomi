@@ -9,12 +9,12 @@ using UnityEngine.UI;
 [System.Serializable]
 public class ComboEffectData
 {
-    public string comboWard;
-    public Color color;
-    public string firstBonus;
-    public string normalScore;
-    public string score;
-    public bool isFirst = true;
+    public string comboWard;    // 発動するコンボの名前
+    public Color color;         // 表示する際のエフェクトの色
+    public string firstBonus;   // 初回ボーナス時の表示エフェクト設定用
+    public string normalScore;  // 通常時の表示エフェクト設定用
+    public string effect;        // 表示するエフェクト
+    public bool isFirst = true; // 初回かどうかを判定
 }
 
 /// <summary>
@@ -23,10 +23,9 @@ public class ComboEffectData
 public class ComboEffectManager : MonoBehaviour
 {
     public List<ComboEffectData> effectDatas = new List<ComboEffectData>();
-    public List<string> comboWards = new List<string>();
     public GameObject comboObj;
     public Text comboText;
-    public Text firstBonusText;
+    public Text getScoreText;
     RectTransform comboRectTransform;
 
     [SerializeField]
@@ -60,7 +59,7 @@ public class ComboEffectManager : MonoBehaviour
 
     private void Awake()
     {
-        firstBonusText.enabled = false;
+        getScoreText.enabled = false;
         comboText = comboObj.GetComponent<Text>();
         comboRectTransform = comboObj.GetComponent<RectTransform>();
         instance = this;
@@ -90,13 +89,12 @@ public class ComboEffectManager : MonoBehaviour
     /// </summary>
     public void IncreaseCombo()
     {
-        //counter++;
         comboOrder.Enqueue(counter);
         // 初回のみ
-        //if (counter == 0)
-        //{
-        //    UpdateEffectData(comboOrder.Dequeue());
-        //}
+        if (counter == 0)
+        {
+            UpdateEffectData(comboOrder.Dequeue());
+        }
     }
 
     /// <summary>
@@ -106,14 +104,13 @@ public class ComboEffectManager : MonoBehaviour
     public void UpdateEffectData(int comboCount)
     {
         Show();
-        //comboText.text = comboWards[comboCount];
         comboText.text = effectDatas[comboCount].comboWard;
         comboText.color = effectDatas[comboCount].color;
 
-        firstBonusText.text = effectDatas[comboCount].score;
-        firstBonusText.color = effectDatas[comboCount].color;
+        getScoreText.text = effectDatas[comboCount].effect;
+        getScoreText.color = effectDatas[comboCount].color;
         effectDatas[comboCount].isFirst = false;
-        //Debug.Log(comboText.text);
+
         comboRectTransform.localRotation = Quaternion.Euler(0, 0, Random.Range(-15.0f, 15.0f));
 
         // 前のコンボ演出が終了していない場合
@@ -148,44 +145,37 @@ public class ComboEffectManager : MonoBehaviour
     {
         for (int i = 0; i < effectDatas.Count; i++)
         {
-            //counter = i;
-            //if (comboWards[i] == comboDatas.comboName)
-            //{
-            //    counter = i;
-            //    //comboText.text = comboWards[i];
-            //    //Debug.Log(comboWards[i]);
-            //    SetFirstComboText(comboDatas);
-            //    IncreaseCombo();
-            //}
             if (effectDatas[i].comboWard == comboDatas.comboName)
             {
                 counter = i;
-                //comboText.text = comboWards[i];
-                //Debug.Log(comboWards[i]);
                 SetFirstComboText(comboDatas);
                 IncreaseCombo();
             }
         }
     }
 
+    /// <summary>
+    /// 初回時のエフェクトを設定
+    /// </summary>
+    /// <param name="comboDatas">コンボデータ</param>
     public void SetFirstComboText(ComboData comboDatas)
     {
         for (int i = 0; i < effectDatas.Count; i++)
         {
+            // 通常時に表示するスコアの値を計算
             effectDatas[i].normalScore =
                     "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
+            // コンボエフェクトが発動するのが初めての時
             if (effectDatas[i].isFirst)
             {
-                effectDatas[i].score = effectDatas[i].firstBonus + "   +" + comboDatas.firstComboScore;
-                //firstBonusText.color = effectDatas[i].color;
-                Debug.Log("TRUEEEEEEEEEEEEEEEEEEEEEEEE");
+                // 初回用のエフェクトを表示
+                effectDatas[i].effect = effectDatas[i].firstBonus + "   +" + comboDatas.firstComboScore;
             }
+            // 初めてではないとき
             else
             {
-                effectDatas[i].score = effectDatas[i].normalScore;
-                //effectDatas[i].normalScore = 
-                //    "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
-                Debug.Log("FALSEEEEEEEEEEEEEEEEEEEEEEEE");
+                // 通常時のエフェクトを表示
+                effectDatas[i].effect = effectDatas[i].normalScore;
             }
         }
     }
@@ -221,13 +211,13 @@ public class ComboEffectManager : MonoBehaviour
     void Show()
     {
         comboText.enabled = true;
-        firstBonusText.enabled = true;
+        getScoreText.enabled = true;
     }
 
     void Hide()
     {
         comboText.enabled = false;
-        firstBonusText.enabled = false;
+        getScoreText.enabled = false;
     }
 
     void Clear()

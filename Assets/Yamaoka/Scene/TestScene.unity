@@ -2201,6 +2201,7 @@ GameObject:
   - component: {fileID: 342402470}
   - component: {fileID: 342402469}
   - component: {fileID: 342402468}
+  - component: {fileID: 342402471}
   m_Layer: 5
   m_Name: ComboEffect
   m_TagString: Untagged
@@ -2270,6 +2271,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &342402471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342402467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.92156863}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &343176846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,8 +3557,9 @@ GameObject:
   - component: {fileID: 528979268}
   - component: {fileID: 528979270}
   - component: {fileID: 528979269}
+  - component: {fileID: 528979271}
   m_Layer: 5
-  m_Name: FirstBonusEffect
+  m_Name: GetScoreEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3610,6 +3627,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528979267}
   m_CullTransparentMesh: 1
+--- !u!114 &528979271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528979267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &536139692
 GameObject:
   m_ObjectHideFlags: 0
@@ -10520,31 +10552,42 @@ MonoBehaviour:
   - comboWard: "\u30EA\u30F3\u30B4\u30EC\u30E2\u30F3"
     color: {r: 0.4048233, g: 1, b: 0, a: 1}
     firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+    normalScore: 
+    effect: 
+    isFirst: 1
   - comboWard: "\u30EA\u30F3\u30B4\u30AA\u30EC\u30F3\u30B8"
     color: {r: 1, g: 0.20258237, b: 0, a: 1}
     firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+    normalScore: 
+    effect: 
+    isFirst: 1
   - comboWard: "\u30AA\u30EC\u30F3\u30B8\u30D0\u30CA\u30CA"
     color: {r: 0, g: 0.3028021, b: 1, a: 1}
     firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+    normalScore: 
+    effect: 
+    isFirst: 1
   - comboWard: "\u30EC\u30E2\u30F3\u30D0\u30CA\u30CA"
     color: {r: 1, g: 0.96657693, b: 0, a: 1}
     firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+    normalScore: 
+    effect: 
+    isFirst: 1
   - comboWard: "\u307E\u308B\u304D\u306E\u307F"
     color: {r: 0.85471106, g: 0, b: 1, a: 1}
     firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
+    normalScore: 
+    effect: 
+    isFirst: 1
   - comboWard: "\u305C\u3093\u3076"
     color: {r: 0, g: 0.9529972, b: 1, a: 1}
     firstBonus: "\u521D\u56DE\u30DC\u30FC\u30CA\u30B9"
-  comboWards:
-  - "\u30EA\u30F3\u30B4\u30EC\u30E2\u30F3"
-  - "\u30EA\u30F3\u30B4\u30AA\u30EC\u30F3\u30B8"
-  - "\u30AA\u30EC\u30F3\u30B8\u30D0\u30CA\u30CA"
-  - "\u30EC\u30E2\u30F3\u30D0\u30CA\u30CA"
-  - "\u307E\u308B\u304D\u306E\u307F"
-  - "\u305C\u3093\u3076"
+    normalScore: 
+    effect: 
+    isFirst: 1
   comboObj: {fileID: 342402467}
   comboText: {fileID: 342402468}
-  firstBonusText: {fileID: 528979269}
+  getScoreText: {fileID: 528979269}
   scaleCurve:
     serializedVersion: 2
     m_Curve:
