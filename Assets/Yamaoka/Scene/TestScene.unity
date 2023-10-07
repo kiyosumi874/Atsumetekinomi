@@ -9002,8 +9002,8 @@ Transform:
   m_GameObject: {fileID: 5653420109475623254}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 125, y: 1, z: 128}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7675443620194478869}
   - {fileID: 1816440426417742009}
@@ -9365,7 +9365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  moveForceMultiplier: 2
+  moveForceMultiplier: 2.2
   footPrintPrefab: {fileID: 8870201955130827207, guid: 9f7f6ff44c959874a9dc86f3e3b00e5f, type: 3}
   frontPos: {fileID: 1650637761}
   backPos: {fileID: 808351385}

@@ -137,26 +137,31 @@ public class ComboManager : MonoBehaviour
             if (KinomiManager.instance.appleNum >= 1 )
             {
                 kinomiScore += Kinomi.instance.score * KinomiManager.instance.appleNum;
+                KinomiManager.instance.appleNum = 0;
             }
             if (KinomiManager.instance.orengeNum >= 1)
             {
                 kinomiScore += Kinomi.instance.score * KinomiManager.instance.orengeNum;
+                KinomiManager.instance.orengeNum = 0;
             }
             if (KinomiManager.instance.bananaNum >= 1 )
             {
                 kinomiScore += Kinomi.instance.score * KinomiManager.instance.bananaNum;
+                KinomiManager.instance.bananaNum = 0;
             }
             if(KinomiManager.instance.lemonNum >= 1)
             {
                 kinomiScore += Kinomi.instance.score * KinomiManager.instance.lemonNum;
+                KinomiManager.instance.lemonNum = 0;
             }
             if (KinomiManager.instance.watermelonNum >= 1)
             {
                 kinomiScore += Kinomi.instance.score * KinomiManager.instance.watermelonNum;
+                KinomiManager.instance.watermelonNum = 0;
             }
         }
         // 使えるコンボがあり、かつ木の実が余っている場合
-        else if(comboDataList.Count > 0
+        else if (comboDataList.Count > 0
             || KinomiManager.instance.appleNum >= 1
             || KinomiManager.instance.orengeNum >= 1
             || KinomiManager.instance.bananaNum >= 1
