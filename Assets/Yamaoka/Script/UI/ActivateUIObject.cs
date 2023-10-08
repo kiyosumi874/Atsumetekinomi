@@ -10,8 +10,8 @@ public class ActivateUIObject : MonoBehaviour
 {
     [SerializeField]
     private GameObject panel_1;   // 表示する画面UI
-    [SerializeField]
-    private GameObject panel_2;   // 表示する画面UI
+    //[SerializeField]
+    //private GameObject panel_2;   // 表示する画面UI
     // 各UIのActivateButtonを取得
     [SerializeField]
     private ActivateButton select1;
@@ -21,7 +21,7 @@ public class ActivateUIObject : MonoBehaviour
     private void Start()
     {
         panel_1.SetActive(false);
-        panel_2.SetActive(false);
+        //panel_2.SetActive(false);
     }
 
     // Update is called once per frame
