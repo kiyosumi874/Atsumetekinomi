@@ -9,10 +9,10 @@ using UnityEngine.EventSystems;
 public class ActivateUIObject : MonoBehaviour
 {
     [SerializeField]
-    private GameObject panel_1;   // 表示する画面UI
-    //[SerializeField]
-    //private GameObject panel_2;   // 表示する画面UI
-    // 各UIのActivateButtonを取得
+    private GameObject panel;   // 表示する画面UI
+
+    public KeyCode openPanelKey;    // UIを開くときに押すキーを設定
+
     [SerializeField]
     private ActivateButton select1;
     [SerializeField]
@@ -20,20 +20,20 @@ public class ActivateUIObject : MonoBehaviour
 
     private void Start()
     {
-        panel_1.SetActive(false);
+        panel.SetActive(false);
         //panel_2.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(openPanelKey))
         {
             // UIの補油時・非表示の切替
-            panel_1.SetActive(!panel_1.activeSelf);
+            panel.SetActive(!panel.activeSelf);
 
             // UI画面が開いたとき
-            if(panel_1.activeSelf)
+            if(panel.activeSelf)
             {
                 // それぞれのボタンの選択状態を設定
                 select1.ActivateOrNotActivate(true);

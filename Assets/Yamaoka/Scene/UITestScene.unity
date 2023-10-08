@@ -123,53 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &156456023
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 156456025}
-  - component: {fileID: 156456024}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &156456024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156456023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d40fd3a7d11e74abaa393e7a0dcc0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel_1: {fileID: 268837090}
-  select1: {fileID: 0}
-  select2: {fileID: 268837092}
---- !u!4 &156456025
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156456023}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1109.9952, y: 409.5577, z: 247.21425}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164269837
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &268080452
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1969,7 +1922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1324079593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,7 +2426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1753230593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2563,7 +2516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1913822756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,7 +2529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d40fd3a7d11e74abaa393e7a0dcc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel_1: {fileID: 268080451}
+  panel: {fileID: 268080451}
+  openPanelKey: 32
   select1: {fileID: 268080455}
   select2: {fileID: 1753230593}
 --- !u!4 &1913822757
@@ -2612,7 +2566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1959426740
 MonoBehaviour:
   m_ObjectHideFlags: 0
