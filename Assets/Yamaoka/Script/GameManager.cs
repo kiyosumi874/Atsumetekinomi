@@ -18,12 +18,8 @@ public class GameManager : MonoBehaviour
 {
     // ゲーム開始までのカウントダウン用
     public float gameStartCountDownSeconds;
-    [SerializeField]
-    private Text countDownText;
     // ゲーム中の制限時間設定用
     public float countDownSeconds;
-    [SerializeField]
-    private Text timeText;
 
     [SerializeField]
     GameState gameState = GameState.BeforeGame;
@@ -41,7 +37,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countDownText.enabled = false;
+        //countDownText.enabled = false;
     }
 
     // Update is called once per frame
@@ -80,9 +76,10 @@ public class GameManager : MonoBehaviour
         //timeText.enabled = true;
         countDownSeconds -= Time.deltaTime;
         var span = new TimeSpan(0, 0, (int)countDownSeconds);
-        timeText.text = span.ToString(@"mm\:ss");
+        //timeText.text = span.ToString(@"mm\:ss");
+        UIManager.instance.gameTimeText.text = span.ToString(@"mm\:ss");
 
-        if(countDownSeconds <= 0)
+        if (countDownSeconds <= 0)
         {
             countDownSeconds = 0;
             ChangeGameState(GameState.AfterGame);
@@ -94,14 +91,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameStartCountDown()
     {
-        countDownText.enabled = true;
+        //countDownText.enabled = true;
+        UIManager.instance.countDownText.enabled = true;
         gameStartCountDownSeconds -= Time.deltaTime;
         //var span = new TimeSpan(0, 0, (int)gameStartCountDownSeconds);
-        countDownText.text = ((int)gameStartCountDownSeconds).ToString();
+        //countDownText.text = ((int)gameStartCountDownSeconds).ToString();
+        UIManager.instance.countDownText.text = ((int)gameStartCountDownSeconds).ToString();
 
         if (gameStartCountDownSeconds <= 0)
         {
-            countDownText.enabled = false;
+            UIManager.instance.countDownText.enabled = false;
             gameStartCountDownSeconds = 0;
             ChangeGameState(GameState.InGame);
         }
@@ -126,7 +125,7 @@ public class GameManager : MonoBehaviour
         if(!instance)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else if (instance != this)
         {

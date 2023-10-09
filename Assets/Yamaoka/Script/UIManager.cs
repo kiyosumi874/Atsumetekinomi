@@ -29,10 +29,14 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance;   // インスタンス
 
+    public Text countDownText;
+    public Text gameTimeText;
+
     private void Awake()
     {
         instance = this;
         InitComboUI();
+        countDownText.enabled = false;
     }
 
     /// <summary>
