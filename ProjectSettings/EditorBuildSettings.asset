@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Yamaoka/Scene/TestGameScene.unity
     guid: 0981d08fd543de949af9ba77b621adbc
   - enabled: 1
+    path: Assets/Yamaoka/Scene/TestResult.unity
+    guid: 3f44d089e69a2624c948ea84f05b1a40
+  - enabled: 1
     path: Assets/Kiyosumi/Scenes/Title.unity
     guid: c9375309bda428c4297aae35badd3827
   - enabled: 1
