@@ -25,17 +25,22 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text timeText;
 
-    //public bool finishCountDown = false;    // カウントダウンが終了したかどうか
-
     [SerializeField]
     GameState gameState = GameState.BeforeGame;
 
     public int score = 0;   // 最終スコア
 
+    public static GameManager instance;      // インスタンス
+
+
+    private void Awake()
+    {
+        CheckInstance();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        //timeText.enabled = false;
         countDownText.enabled = false;
     }
 
@@ -79,7 +84,6 @@ public class GameManager : MonoBehaviour
 
         if(countDownSeconds <= 0)
         {
-            //finishCountDown = true;
             countDownSeconds = 0;
             ChangeGameState(GameState.AfterGame);
         }
@@ -99,7 +103,6 @@ public class GameManager : MonoBehaviour
         {
             countDownText.enabled = false;
             gameStartCountDownSeconds = 0;
-            //finishCountDown = true;
             ChangeGameState(GameState.InGame);
         }
     }
@@ -112,5 +115,22 @@ public class GameManager : MonoBehaviour
     {
         score = ComboManager.instance.score;
         return score;
+    }
+
+    /// <summary>
+    /// 他のゲームオブジェクトにアタッチされているか調べる
+    /// アタッチされている場合は破棄する。
+    /// </summary>
+    private void CheckInstance()
+    {
+        if(!instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
