@@ -7,7 +7,7 @@ public class TitleSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.instance.ChangeGameState(GameState.None);
     }
 
     // Update is called once per frame

@@ -12,7 +12,7 @@ public enum GameState
     BeforeGame,     // ゲーム開始前
     InGame,         // ゲーム中
     AfterGame,      // ゲーム終了
-    None
+    None,
 }
 
 public class GameManager : MonoBehaviour
@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         CheckInstance();
-        gameState = GameState.BeforeGame;
+        //gameState = GameState.BeforeGame;
+        // 各時間の初期値を設定
         startCountDownTime = gameStartCountDownSeconds;
         gameTime = countDownSeconds;
     }
@@ -66,13 +67,36 @@ public class GameManager : MonoBehaviour
                 SceneChanger.Instance.LoadSceneFaded("TestResult");
                 break;
             case GameState.None:
+                // 各時間を初期化する
+                gameStartCountDownSeconds = startCountDownTime;
+                countDownSeconds = gameTime;
                 // 現在のシーンがゲームシーンの時
-                if(SceneManager.GetActiveScene().name == "TestGameScene")
+                if (SceneManager.GetActiveScene().name == "TestGameScene")
                 {
                     ChangeGameState(GameState.BeforeGame);
                 }
                 break;
         }
+    }
+
+    /// <summary>
+    /// ゲームシーンからリザルトシーンに遷移する際に呼ぶ
+    /// </summary>
+    public void ChangeGameToResult()
+    {
+        ChangeGameState(GameState.AfterGame);
+        //gameStartCountDownSeconds = startCountDownTime;
+        //countDownSeconds = gameTime;
+    }
+
+    /// <summary>
+    /// ゲームシーンからタイトルシーンに遷移する際に呼ぶ
+    /// </summary>
+    public void ChangeGameToTitle()
+    {
+        ChangeGameState(GameState.None);
+        //gameStartCountDownSeconds = startCountDownTime;
+        //countDownSeconds = gameTime;
     }
 
     /// <summary>
