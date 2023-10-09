@@ -37,6 +37,7 @@ public class ActivateUIObject : MonoBehaviour
             {
                 // ‚»‚ê‚¼‚ê‚Ìƒ{ƒ^ƒ“‚Ì‘I‘ğó‘Ô‚ğİ’è
                 select1.ActivateOrNotActivate(true);
+                SetTimeScale(0);
                 //select2.ActivateOrNotActivate(false);
             }
             else
@@ -45,5 +46,14 @@ public class ActivateUIObject : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(null);
             }
         }
+    }
+
+    /// <summary>
+    /// TimeScale‚ğİ’è
+    /// </summary>
+    /// <param name="timeScale">TimeScale‚Ì‘å‚«‚³</param>
+    public void SetTimeScale(int timeScale)
+    {
+        Time.timeScale = timeScale;
     }
 }
