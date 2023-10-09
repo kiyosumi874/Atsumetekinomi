@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 /// <summary>
 /// ゲームの状態を設定
 /// </summary>
@@ -11,7 +11,8 @@ public enum GameState
 {
     BeforeGame,     // ゲーム開始前
     InGame,         // ゲーム中
-    AfterGame       // ゲーム終了
+    AfterGame,      // ゲーム終了
+    None
 }
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
     public float gameStartCountDownSeconds;
     // ゲーム中の制限時間設定用
     public float countDownSeconds;
+
+    // 各時間の初期値を保存する変数
+    public float startCountDownTime;
+    public float gameTime;
 
     [SerializeField]
     GameState gameState = GameState.BeforeGame;
@@ -32,6 +37,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         CheckInstance();
+        gameState = GameState.BeforeGame;
+        startCountDownTime = gameStartCountDownSeconds;
+        gameTime = countDownSeconds;
     }
 
     // Start is called before the first frame update
@@ -56,6 +64,13 @@ public class GameManager : MonoBehaviour
             case GameState.AfterGame:
                 score = ResultScore();
                 SceneChanger.Instance.LoadSceneFaded("TestResult");
+                break;
+            case GameState.None:
+                // 現在のシーンがゲームシーンの時
+                if(SceneManager.GetActiveScene().name == "TestGameScene")
+                {
+                    ChangeGameState(GameState.BeforeGame);
+                }
                 break;
         }
     }
@@ -82,7 +97,7 @@ public class GameManager : MonoBehaviour
 
         if (countDownSeconds <= 0)
         {
-            countDownSeconds = 0;
+            countDownSeconds = gameTime;
             ChangeGameState(GameState.AfterGame);
         }
     }
@@ -102,7 +117,7 @@ public class GameManager : MonoBehaviour
         if (gameStartCountDownSeconds <= 0)
         {
             UIManager.instance.countDownText.enabled = false;
-            gameStartCountDownSeconds = 0;
+            gameStartCountDownSeconds = startCountDownTime;
             ChangeGameState(GameState.InGame);
         }
     }
@@ -126,7 +141,7 @@ public class GameManager : MonoBehaviour
         if(!instance)
         {
             instance = this;
-            //DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(this.gameObject);
         }
         else if (instance != this)
         {
