@@ -814,17 +814,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
---- !u!114 &1139934266 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2064956777577293671, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
-  m_PrefabInstance: {fileID: 1139934265}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bee5eeab21d9f408644f99bbbe9147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1180273968
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +906,7 @@ GameObject:
   - component: {fileID: 1344317501}
   - component: {fileID: 1344317500}
   - component: {fileID: 1344317499}
+  - component: {fileID: 1344317502}
   m_Layer: 5
   m_Name: GameStartButton
   m_TagString: Untagged
@@ -989,9 +979,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1139934266}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: LoadSceneFaded
+      - m_Target: {fileID: 1344317502}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: SceneChange
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1039,6 +1029,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344317497}
   m_CullTransparentMesh: 1
+--- !u!114 &1344317502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344317497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4937ed7ddda47746850ccd03f2cf462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415520633
 GameObject:
   m_ObjectHideFlags: 0

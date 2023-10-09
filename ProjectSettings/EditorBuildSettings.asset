@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Yamaoka/Scene/Titletest.unity
+    guid: 9ee6bdb5f537d6c408a25f8821781bda
+  - enabled: 1
     path: Assets/Yamaoka/Scene/TestGameScene.unity
     guid: 0981d08fd543de949af9ba77b621adbc
   - enabled: 1

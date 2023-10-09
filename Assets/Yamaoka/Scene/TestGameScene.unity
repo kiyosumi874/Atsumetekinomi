@@ -4583,6 +4583,8 @@ MonoBehaviour:
     comboNoText: {fileID: 1724623857}
     addScore: {fileID: 316167099}
     comboUINomber: 6
+  countDownText: {fileID: 557957821}
+  gameTimeText: {fileID: 114959429}
 --- !u!4 &708989619
 Transform:
   m_ObjectHideFlags: 0
@@ -4674,6 +4676,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737333761}
   m_CullTransparentMesh: 1
+--- !u!1001 &771380539
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293668, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956777577293670, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_Name
+      value: SceneChanger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064956778880407623, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2bd146c7b4d80574895462ae77935349, type: 3}
 --- !u!1 &778618434
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,6 +5173,7 @@ GameObject:
   - component: {fileID: 924397932}
   - component: {fileID: 924397931}
   - component: {fileID: 924397930}
+  - component: {fileID: 924397933}
   m_Layer: 5
   m_Name: FinishGame
   m_TagString: Untagged
@@ -5181,7 +5245,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 924397931}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 924397933}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: SceneChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Titletest
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1477264648}
+        m_TargetAssemblyTypeName: ActivateUIObject, Assembly-CSharp
+        m_MethodName: SetTimeScale
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &924397931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,6 +5308,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924397928}
   m_CullTransparentMesh: 1
+--- !u!114 &924397933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924397928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4937ed7ddda47746850ccd03f2cf462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &972817231
 GameObject:
   m_ObjectHideFlags: 0
@@ -13080,6 +13180,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1477264648}
+        m_TargetAssemblyTypeName: ActivateUIObject, Assembly-CSharp
+        m_MethodName: SetTimeScale
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1719191992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13796,9 +13908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStartCountDownSeconds: 5
-  countDownText: {fileID: 557957821}
   countDownSeconds: 20
-  timeText: {fileID: 114959429}
   gameState: 0
   score: 0
 --- !u!4 &1927872575
