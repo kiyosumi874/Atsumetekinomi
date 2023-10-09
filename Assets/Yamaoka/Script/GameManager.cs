@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.AfterGame:
                 score = ResultScore();
+                SceneChanger.Instance.LoadSceneFaded("TestResult");
                 break;
         }
     }
