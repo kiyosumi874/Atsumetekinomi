@@ -37,7 +37,7 @@ public class ActivateUIObject : MonoBehaviour
             {
                 // ‚»‚ê‚¼‚ê‚Ìƒ{ƒ^ƒ“‚Ì‘I‘ğó‘Ô‚ğİ’è
                 select1.ActivateOrNotActivate(true);
-                select2.ActivateOrNotActivate(false);
+                //select2.ActivateOrNotActivate(false);
             }
             else
             {
