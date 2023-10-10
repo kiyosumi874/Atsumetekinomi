@@ -76,7 +76,7 @@ public class ComboEffectManager : MonoBehaviour
 
         timer += Time.deltaTime;
         // コンボ数が大きい程短時間で次の表示を行う
-        var tempRate = Mathf.Clamp((1.0f - counter / 10.0f), 1.0f, 5.0f);
+        var tempRate = Mathf.Clamp((1.0f - counter / 10.0f), 2.0f, 5.0f);
         if (timer > effectDuration * tempRate)
         {
             timer = 0;
@@ -154,7 +154,7 @@ public class ComboEffectManager : MonoBehaviour
             counter = 0;
             IncreaseCombo();
 
-            Debug.Log("NO COMBOOOOOOOOOOOOOOOOOOOO");
+            //Debug.Log("NO COMBOOOOOOOOOOOOOOOOOOOO");
         }
         else
         {
