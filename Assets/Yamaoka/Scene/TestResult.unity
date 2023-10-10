@@ -666,6 +666,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7189138324059888788, guid: 56a8d99ed05cf33419cbdeb6140b8183, type: 3}
+      propertyPath: countDownSeconds
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7189138324059888789, guid: 56a8d99ed05cf33419cbdeb6140b8183, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1367,7 +1371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1683494070
 RectTransform:
   m_ObjectHideFlags: 0

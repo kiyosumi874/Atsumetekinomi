@@ -1335,6 +1335,10 @@ PrefabInstance:
       propertyPath: gameState
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7189138324059888788, guid: 56a8d99ed05cf33419cbdeb6140b8183, type: 3}
+      propertyPath: countDownSeconds
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7189138324059888789, guid: 56a8d99ed05cf33419cbdeb6140b8183, type: 3}
       propertyPath: m_RootOrder
       value: 6
