@@ -100,11 +100,11 @@ public class KinomiManager : MonoBehaviour
         CheckHasKinomi();
         SetMinAllKinomisNum();
         allKinomiNumText.text = nowKinomiNum.ToString();
-        appleNumText.text = appleNum.ToString();
-        orengeNumText.text = orengeNum.ToString();
-        bananaNumText.text = bananaNum.ToString();
-        lemonNumText.text = lemonNum.ToString();
-        watermelonNumText.text = watermelonNum.ToString();
+        appleNumText.text = "x" + appleNum.ToString();
+        orengeNumText.text = "x" + orengeNum.ToString();
+        bananaNumText.text = "x" + bananaNum.ToString();
+        lemonNumText.text = "x" + lemonNum.ToString();
+        watermelonNumText.text = "x" + watermelonNum.ToString();
     }
 
     /// <summary>
