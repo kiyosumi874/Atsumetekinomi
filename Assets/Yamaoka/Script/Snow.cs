@@ -13,7 +13,7 @@ public class Snow : MonoBehaviour
     const int SNOW_NUM = 8000;  // とりあえず 1/8個出す
     private Vector3[] vertices; // 頂点
     private int[] triangles;    // 頂点を結んだ三角形
-    private Color[] colors;
+    private Color[] colors;     // 色設定用
     private Vector2[] uvs;      // UV座標
 
     private float range;    // 雪を降らせる範囲
@@ -83,7 +83,7 @@ public class Snow : MonoBehaviour
     /// </summary>
     void LateUpdate()
     { 
-        // カメラの前方Ⅰを計算
+        // カメラの前方位置を計算
         // ここを中心に雪が降る
         var targetPosition = Camera.main.transform.TransformPoint(Vector3.forward * range);
         var mr = GetComponent<Renderer>();

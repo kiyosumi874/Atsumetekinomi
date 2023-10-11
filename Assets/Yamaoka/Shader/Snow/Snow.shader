@@ -1,9 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 Shader "Custom/Snow"
 {
     Properties
@@ -57,7 +51,7 @@ Shader "Custom/Snow"
                 float3 trip;
                 float3 mv = v.vertex.xyz;
                 mv += _MoveTotal;
-                            // 座標を足すだけはダメ、(頂点を)うまくリピートさせないといけない
+                // 座標を足すだけはダメ、(頂点を)うまくリピートさせないといけない
                 trip = floor(((target - mv) * _RangeR + 1) * 0.5);
                 trip *= (_Range * 2);
                 mv += trip;
