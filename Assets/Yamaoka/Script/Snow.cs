@@ -17,7 +17,7 @@ public class Snow : MonoBehaviour
     private Vector2[] uvs;      // UV座標
 
     private float range;    // 雪を降らせる範囲
-    private float rangeR;
+    private float rangeR;   // rangeの逆数(計算効率のため)
     private Vector3 move = Vector3.zero;
 
     // Start is called before the first frame update
@@ -88,12 +88,12 @@ public class Snow : MonoBehaviour
         var targetPosition = Camera.main.transform.TransformPoint(Vector3.forward * range);
         var mr = GetComponent<Renderer>();
         // シェーダー定数の設定
-        mr.material.SetFloat("_Range", range);
-        mr.material.SetFloat("_RangeR", rangeR);
-        mr.material.SetFloat("_Size", 0.1f);
-        mr.material.SetVector("_MoveTotal", move);
-        mr.material.SetVector("_CamUp", Camera.main.transform.up);
-        mr.material.SetVector("_TargetPosition", targetPosition);
+        mr.material.SetFloat("_Range", range);      // 雪の範囲
+        mr.material.SetFloat("_RangeR", rangeR);    // rangeの逆数
+        mr.material.SetFloat("_Size", 0.1f);        // 雪の粒の大きさ
+        mr.material.SetVector("_MoveTotal", move);  // 移動量
+        mr.material.SetVector("_CamUp", Camera.main.transform.up);  // カメラの視線ベクトルに対して90度上のベクトル
+        mr.material.SetVector("_TargetPosition", targetPosition);   // 雪の範囲の中心
         // 生成した雪を降らせる
         //float x = 0f;
         //float y = -2f;
