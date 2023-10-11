@@ -173,7 +173,7 @@ public class ComboEffectManager : MonoBehaviour
             if (effectDatas[i].comboWard == comboDatas.comboName)
             {
                 counter = i;
-                SetFirstComboText(comboDatas);
+                //SetFirstComboText(comboDatas);
                 IncreaseCombo();
             }
         }
@@ -188,8 +188,9 @@ public class ComboEffectManager : MonoBehaviour
         for (int i = 1; i < effectDatas.Count; i++)
         {
             // 通常時に表示するスコアの値を計算
-            effectDatas[i].normalScore =
-                    "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
+            //effectDatas[i].normalScore =
+            //        "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
+            //Debug.Log(comboDatas.normalComboScore * comboDatas.comboLevel);
             // コンボエフェクトが発動するのが初めての時
             if (effectDatas[i].isFirst)
             {
@@ -197,10 +198,10 @@ public class ComboEffectManager : MonoBehaviour
                 effectDatas[i].effect = effectDatas[i].firstBonus + "   +" + comboDatas.firstComboScore;
             }
             // 初めてではないとき
-            else
+            else if (effectDatas[i].comboWard == comboDatas.comboName)
             {
                 // 通常時のエフェクトを表示
-                effectDatas[i].effect = effectDatas[i].normalScore;
+                effectDatas[i].effect = (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
             }
         }
     }

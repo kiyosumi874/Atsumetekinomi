@@ -81,6 +81,7 @@ public class ComboManager : MonoBehaviour
                     comboDatas[i].UseCombo(comboDatas[i].isFrist, score);
                 //SubtractionUseComboKinomi(comboDatas[i]);
                 ComboEffectManager.instance.SetComboName(comboDatas[i]);
+                ComboEffectManager.instance.SetFirstComboText(comboDatas[i]);
             }
         }
         GetNotComboScore();
