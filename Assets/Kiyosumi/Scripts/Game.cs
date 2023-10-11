@@ -8,7 +8,7 @@ public class Game : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneChanger.Instance.LoadSceneFaded("Result");
+            SceneChanger.Instance.LoadSceneFaded("Ranking");
         }
     }
 }
