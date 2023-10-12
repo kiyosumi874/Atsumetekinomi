@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 10536676}
   - component: {fileID: 10536675}
   m_Layer: 5
-  m_Name: Kinomi_2
+  m_Name: BananaImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 10536673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 343176847}
@@ -1188,7 +1188,7 @@ GameObject:
   - component: {fileID: 210701571}
   - component: {fileID: 210701570}
   m_Layer: 5
-  m_Name: Kinomi_3
+  m_Name: OrangeImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1480,7 +1480,7 @@ GameObject:
   - component: {fileID: 233863107}
   - component: {fileID: 233863106}
   m_Layer: 5
-  m_Name: Kinomi_2
+  m_Name: LemonImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3369,7 +3369,7 @@ RectTransform:
   m_GameObject: {fileID: 496189514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1263895265}
@@ -3824,7 +3824,7 @@ GameObject:
   - component: {fileID: 536139695}
   - component: {fileID: 536139694}
   m_Layer: 5
-  m_Name: Kinomi_3
+  m_Name: OrangeImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4138,7 +4138,7 @@ GameObject:
   - component: {fileID: 609977374}
   - component: {fileID: 609977373}
   m_Layer: 5
-  m_Name: Kinomi_4
+  m_Name: WatermelonImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4214,7 +4214,7 @@ GameObject:
   - component: {fileID: 643123861}
   - component: {fileID: 643123860}
   m_Layer: 5
-  m_Name: Apple
+  m_Name: AppleImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4346,6 +4346,27 @@ MonoBehaviour:
     comboUINomber: 6
   countDownText: {fileID: 557957821}
   gameTimeText: {fileID: 114959429}
+  appleImgs:
+  - {fileID: 918665672}
+  - {fileID: 643123860}
+  - {fileID: 1684330698}
+  - {fileID: 1155364108}
+  lemonImgs:
+  - {fileID: 233863106}
+  - {fileID: 1984399958}
+  - {fileID: 737333763}
+  orangeImgs:
+  - {fileID: 1898745082}
+  - {fileID: 1849223405}
+  - {fileID: 536139694}
+  - {fileID: 210701570}
+  bananaImgs:
+  - {fileID: 1486394048}
+  - {fileID: 10536675}
+  - {fileID: 1014846935}
+  watermelonImgs:
+  - {fileID: 609977373}
+  - {fileID: 1838172681}
 --- !u!4 &708989619
 Transform:
   m_ObjectHideFlags: 0
@@ -4373,7 +4394,7 @@ GameObject:
   - component: {fileID: 737333764}
   - component: {fileID: 737333763}
   m_Layer: 5
-  m_Name: Kinomi_2
+  m_Name: LemonImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4874,7 +4895,7 @@ GameObject:
   - component: {fileID: 918665673}
   - component: {fileID: 918665672}
   m_Layer: 5
-  m_Name: Kinomi_1
+  m_Name: AppleImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5546,7 +5567,7 @@ GameObject:
   - component: {fileID: 1014846936}
   - component: {fileID: 1014846935}
   m_Layer: 5
-  m_Name: Kinomi_4
+  m_Name: BananaImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5561,7 +5582,7 @@ RectTransform:
   m_GameObject: {fileID: 1014846933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1951286449}
@@ -11173,7 +11194,7 @@ GameObject:
   - component: {fileID: 1155364109}
   - component: {fileID: 1155364108}
   m_Layer: 5
-  m_Name: Kinomi_1
+  m_Name: AppleImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11937,7 +11958,7 @@ GameObject:
   - component: {fileID: 1486394049}
   - component: {fileID: 1486394048}
   m_Layer: 5
-  m_Name: Banana
+  m_Name: BananaImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11952,7 +11973,7 @@ RectTransform:
   m_GameObject: {fileID: 1486394046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 128698199}
@@ -13007,7 +13028,7 @@ GameObject:
   - component: {fileID: 1684330699}
   - component: {fileID: 1684330698}
   m_Layer: 5
-  m_Name: Kinomi_1
+  m_Name: AppleImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13698,7 +13719,7 @@ GameObject:
   - component: {fileID: 1838172682}
   - component: {fileID: 1838172681}
   m_Layer: 5
-  m_Name: Kinomi_5
+  m_Name: WatermelonImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13774,7 +13795,7 @@ GameObject:
   - component: {fileID: 1849223406}
   - component: {fileID: 1849223405}
   m_Layer: 5
-  m_Name: Orange
+  m_Name: OrangeImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13861,7 +13882,7 @@ GameObject:
   - component: {fileID: 1898745083}
   - component: {fileID: 1898745082}
   m_Layer: 5
-  m_Name: Orange
+  m_Name: OrangeImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14324,7 +14345,7 @@ GameObject:
   - component: {fileID: 1984399959}
   - component: {fileID: 1984399958}
   m_Layer: 5
-  m_Name: Kinomi_1
+  m_Name: LemonImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

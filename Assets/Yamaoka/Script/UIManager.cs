@@ -32,10 +32,17 @@ public class UIManager : MonoBehaviour
     public Text countDownText;
     public Text gameTimeText;
 
+    //すべての木の実の画像を格納
+    public List<UnityEngine.UI.Image> appleImgs = new List<UnityEngine.UI.Image>();
+    public List<UnityEngine.UI.Image> lemonImgs = new List<UnityEngine.UI.Image>();
+    public List<UnityEngine.UI.Image> orangeImgs = new List<UnityEngine.UI.Image>();
+    public List<UnityEngine.UI.Image> bananaImgs = new List<UnityEngine.UI.Image>();
+    public List<UnityEngine.UI.Image> watermelonImgs = new List<UnityEngine.UI.Image>();
+
     private void Awake()
     {
         instance = this;
-        InitComboUI();
+        //InitComboUI();
         countDownText.enabled = false;
     }
 
@@ -60,12 +67,12 @@ public class UIManager : MonoBehaviour
         {
             for (int i = 0; i < comboDatas.Length; i++)
             {
-                if (comboDatas[i].comboName == data.comboName
-                    && !comboDatas[i].isFrist)
-                {
-                    // 使用されたコンボのUIを表示する
-                    data.comboUI.SetActive(true);
-                }
+                //if (comboDatas[i].comboName == data.comboName
+                //    && !comboDatas[i].isFrist)
+                //{
+                //    // 使用されたコンボのUIを表示する
+                //    data.comboUI.SetActive(true);
+                //}
 
                 if(comboDatas[i].comboName == data.comboName)
                 {
@@ -78,6 +85,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// コンボUIの拡大・縮小アニメーション
+    /// </summary>
+    /// <param name="comboDatas">コンボデータ</param>
     public void ChangeComboUIScale(ComboData[] comboDatas)
     {
         foreach (ComboUIData data in comboUIDataList)
@@ -112,6 +123,80 @@ public class UIManager : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    /// <summary>
+    /// 木の実画像の透過度を設定
+    /// </summary>
+    /// <param name="apple">hasApple</param>
+    /// <param name="lemon">hasLemon</param>
+    /// <param name="orange">hasOrange</param>
+    /// <param name="banana">hasBanana</param>
+    /// <param name="watermelon">hasWatermelon</param>
+    public void ChangeKinomiImgAlpha(bool apple, bool lemon, bool orange, bool banana, bool watermelon)
+    {
+        Color hasNotKinomi = new Color(1, 1, 1, 0.8f);  // 木の実を持っていないときの透過度
+        Color hasKinomi = new Color(1, 1, 1, 1.0f);     // 木の実を持っているときの透過度
+        // リンゴ画像の色を設定
+        for (int i = 0; i < appleImgs.Count; i++)
+        {
+            if(apple)
+            {
+                appleImgs[i].color = hasKinomi;
+            }
+            else
+            {
+                appleImgs[i].color = hasNotKinomi;
+            }
+        }
+        // レモン画像の色を設定
+        for (int i = 0; i < lemonImgs.Count; i++)
+        {
+            if (lemon)
+            {
+                lemonImgs[i].color = hasKinomi;
+            }
+            else
+            {
+                lemonImgs[i].color = hasNotKinomi;
+            }
+        }
+        // オレンジ画像の色を設定
+        for (int i = 0; i < orangeImgs.Count; i++)
+        {
+            if (orange)
+            {
+                orangeImgs[i].color = hasKinomi;
+            }
+            else
+            {
+                orangeImgs[i].color = hasNotKinomi;
+            }
+        }
+        // バナナ画像の色を設定
+        for (int i = 0; i < bananaImgs.Count; i++)
+        {
+            if (banana)
+            {
+                bananaImgs[i].color = hasKinomi;
+            }
+            else
+            {
+                bananaImgs[i].color = hasNotKinomi;
+            }
+        }
+        // スイカ画像の色を設定
+        for (int i = 0; i < watermelonImgs.Count; i++)
+        {
+            if (watermelon)
+            {
+                watermelonImgs[i].color = hasKinomi;
+            }
+            else
+            {
+                watermelonImgs[i].color = hasNotKinomi;
+            }
         }
     }
 }

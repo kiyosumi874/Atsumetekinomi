@@ -105,6 +105,8 @@ public class KinomiManager : MonoBehaviour
         bananaNumText.text = "x" + bananaNum.ToString();
         lemonNumText.text = "x" + lemonNum.ToString();
         watermelonNumText.text = "x" + watermelonNum.ToString();
+
+        UIManager.instance.ChangeKinomiImgAlpha(hasApple, hasLemon, hasOrenge, hasBanana, hasWatermelon);
     }
 
     /// <summary>
