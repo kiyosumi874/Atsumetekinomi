@@ -201,7 +201,7 @@ public class ComboEffectManager : MonoBehaviour
             else if (effectDatas[i].comboWard == comboDatas.comboName)
             {
                 // 通常時のエフェクトを表示
-                effectDatas[i].effect =  "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
+                effectDatas[i].effect =  "スコア   +" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
             }
         }
     }
