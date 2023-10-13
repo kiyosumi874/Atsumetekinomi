@@ -1211,7 +1211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 962, y: -358.00046}
+  m_AnchoredPosition: {x: 826.0005, y: -358.00046}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210701570
@@ -2213,8 +2213,8 @@ MonoBehaviour:
   comboDatas:
   - comboName: "\u30EA\u30F3\u30B4\u30AA\u30EC\u30F3\u30B8"
     comboCount: 0
-    firstComboScore: 500
-    normalComboScore: 100
+    firstComboScore: 750
+    normalComboScore: 250
     comboLevel: 1
     comboLvUpCount: 5
     isFrist: 1
@@ -2226,8 +2226,8 @@ MonoBehaviour:
     useWatermelonNum: 0
   - comboName: "\u30AA\u30EC\u30F3\u30B8\u30D0\u30CA\u30CA"
     comboCount: 0
-    firstComboScore: 500
-    normalComboScore: 100
+    firstComboScore: 600
+    normalComboScore: 200
     comboLevel: 1
     comboLvUpCount: 5
     isFrist: 1
@@ -2252,8 +2252,8 @@ MonoBehaviour:
     useWatermelonNum: 0
   - comboName: "\u30EC\u30E2\u30F3\u30D0\u30CA\u30CA"
     comboCount: 0
-    firstComboScore: 500
-    normalComboScore: 100
+    firstComboScore: 800
+    normalComboScore: 300
     comboLevel: 1
     comboLvUpCount: 5
     isFrist: 1
@@ -2265,8 +2265,8 @@ MonoBehaviour:
     useWatermelonNum: 0
   - comboName: "\u307E\u308B\u304D\u306E\u307F"
     comboCount: 0
-    firstComboScore: 500
-    normalComboScore: 100
+    firstComboScore: 3000
+    normalComboScore: 1000
     comboLevel: 1
     comboLvUpCount: 5
     isFrist: 1
@@ -2278,8 +2278,8 @@ MonoBehaviour:
     useWatermelonNum: 1
   - comboName: "\u305C\u3093\u3076"
     comboCount: 0
-    firstComboScore: 500
-    normalComboScore: 100
+    firstComboScore: 5000
+    normalComboScore: 2500
     comboLevel: 1
     comboLvUpCount: 5
     isFrist: 1
@@ -3847,7 +3847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 386, y: -320.0005}
+  m_AnchoredPosition: {x: 250.0005, y: -320.0005}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536139694
@@ -4161,7 +4161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 869.99976, y: -320}
+  m_AnchoredPosition: {x: 734, y: -320}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609977373
@@ -4417,7 +4417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 367.00015, y: -357.99997}
+  m_AnchoredPosition: {x: 231.00066, y: -357.99997}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737333763
@@ -5590,7 +5590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1447, y: -357.99997}
+  m_AnchoredPosition: {x: 1311.0005, y: -357.99997}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014846935
@@ -11217,7 +11217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -117.99982, y: -358.00046}
+  m_AnchoredPosition: {x: -253.99931, y: -358.00046}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155364108
@@ -13051,7 +13051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95.00023, y: -320.0005}
+  m_AnchoredPosition: {x: -230.99973, y: -320.0005}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684330698
@@ -13742,7 +13742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1918, y: -358}
+  m_AnchoredPosition: {x: 1782.0005, y: -358}
   m_SizeDelta: {x: 960, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838172681

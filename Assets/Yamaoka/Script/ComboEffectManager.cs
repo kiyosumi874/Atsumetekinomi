@@ -192,7 +192,8 @@ public class ComboEffectManager : MonoBehaviour
             //        "+" + (comboDatas.normalComboScore * comboDatas.comboLevel).ToString();
             //Debug.Log(comboDatas.normalComboScore * comboDatas.comboLevel);
             // コンボエフェクトが発動するのが初めての時
-            if (effectDatas[i].isFirst)
+            if (effectDatas[i].isFirst
+                && effectDatas[i].comboWard == comboDatas.comboName)
             {
                 // 初回用のエフェクトを表示
                 effectDatas[i].effect = effectDatas[i].firstBonus + "   +" + comboDatas.firstComboScore;
