@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
     public float moveSpeed = 15.0f;
+    private float tempMoveSpeed;
     private Vector3 inputAxis;
     public float moveForceMultiplier;    // 移動速度の入力に対する追従度
 
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         this.rb = GetComponent<Rigidbody>();
+        tempMoveSpeed = moveSpeed;
     }
 
     private void Update()
@@ -37,6 +39,26 @@ public class PlayerController : MonoBehaviour
             time = 0.0f;
             Instantiate(footPrintPrefab, frontPos.position, transform.rotation);
             Instantiate(footPrintPrefab, backPos.position, transform.rotation);
+        }
+
+        // GameStateに応じて、プレイヤーの行動を制限する
+        if(GameManager.instance.gameState != GameState.InGame)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = tempMoveSpeed;
+        }
+
+        // 入力がないときに、操作パネルを表示
+        if(inputAxis == Vector3.zero)
+        {
+            UIManager.instance.operationPanel.SetActive(true);
+        }
+        else
+        {
+            UIManager.instance.operationPanel.SetActive(false);
         }
     }
 

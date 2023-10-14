@@ -26,8 +26,7 @@ public class GameManager : MonoBehaviour
     public float startCountDownTime;
     public float gameTime;
 
-    [SerializeField]
-    GameState gameState = GameState.BeforeGame;
+    public GameState gameState = GameState.BeforeGame;
 
     public int score = 0;   // 最終スコア
 

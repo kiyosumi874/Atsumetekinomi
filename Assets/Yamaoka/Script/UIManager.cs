@@ -39,6 +39,9 @@ public class UIManager : MonoBehaviour
     public List<UnityEngine.UI.Image> bananaImgs = new List<UnityEngine.UI.Image>();
     public List<UnityEngine.UI.Image> watermelonImgs = new List<UnityEngine.UI.Image>();
 
+    // ‘€ìƒpƒlƒ‹
+    public GameObject operationPanel;
+
     private void Awake()
     {
         instance = this;
