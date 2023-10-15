@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         instance = this;
         //InitComboUI();
         countDownText.enabled = false;
-        getOverKinomiUI.SetActive(false);
+        InitGetOverKinomiUI();
         operationPanel.SetActive(false);
     }
 
@@ -207,15 +207,33 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 木の実をこれ以上持てない際にメッセージを表示
+    /// </summary>
     public void ShowGetOverKinomiUI()
     {
         getOverKinomiUI.SetActive(true);
-        DOVirtual.DelayedCall(1.0f,
-            () => { getOverKinomiUI.SetActive(false); });
-        //RectTransform rectTransform = getOverKinomiUI.GetComponent<RectTransform>();
+        RectTransform rectTransform = getOverKinomiUI.GetComponent<RectTransform>();
 
-        //rectTransform.DOAnchorPos(
-        //    new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y + 200), 1.0f)
-        //    .SetEase(Ease.OutBack);
+        rectTransform.DOAnchorPosY(150.0f, 1.0f).SetEase(Ease.OutBack);
+
+        DOVirtual.DelayedCall(1.5f,
+            () => { HideGetOverKinomiUI(); });
+    }
+    /// <summary>
+    /// メッセージを非表示にする
+    /// </summary>
+    public void HideGetOverKinomiUI()
+    {
+        RectTransform rectTransform = getOverKinomiUI.GetComponent<RectTransform>();
+        rectTransform.DOAnchorPosY(370.0f, 1.0f).SetEase(Ease.OutBack);
+    }
+    /// <summary>
+    /// メッセージUIの位置の初期化
+    /// </summary>
+    public void InitGetOverKinomiUI()
+    {
+        RectTransform rectTransform = getOverKinomiUI.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, 370.0f);
     }
 }
