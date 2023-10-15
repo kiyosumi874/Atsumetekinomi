@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2211,6 +2211,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comboDataList: []
   comboDatas:
+  - comboName: "\u30EA\u30F3\u30B4\u30EC\u30E2\u30F3"
+    comboCount: 0
+    firstComboScore: 500
+    normalComboScore: 100
+    comboLevel: 1
+    comboLvUpCount: 5
+    isFrist: 1
+    useCombo: 0
+    useAppleNum: 1
+    useOrengeNum: 0
+    useBananaNum: 0
+    useLemonNum: 1
+    useWatermelonNum: 0
   - comboName: "\u30EA\u30F3\u30B4\u30AA\u30EC\u30F3\u30B8"
     comboCount: 0
     firstComboScore: 750
@@ -2236,19 +2249,6 @@ MonoBehaviour:
     useOrengeNum: 1
     useBananaNum: 1
     useLemonNum: 0
-    useWatermelonNum: 0
-  - comboName: "\u30EA\u30F3\u30B4\u30EC\u30E2\u30F3"
-    comboCount: 0
-    firstComboScore: 500
-    normalComboScore: 100
-    comboLevel: 1
-    comboLvUpCount: 5
-    isFrist: 1
-    useCombo: 0
-    useAppleNum: 1
-    useOrengeNum: 0
-    useBananaNum: 0
-    useLemonNum: 1
     useWatermelonNum: 0
   - comboName: "\u30EC\u30E2\u30F3\u30D0\u30CA\u30CA"
     comboCount: 0
