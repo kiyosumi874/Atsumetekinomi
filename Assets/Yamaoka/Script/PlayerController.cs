@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
 
     public float time = 0;
 
+    public double counter = 0;
+    public double maxCounter = 5;
+
+    public bool onIceFloor = false;     // 氷の床の上にいるかどうか
+
     private void Start()
     {
         this.rb = GetComponent<Rigidbody>();
@@ -33,6 +38,7 @@ public class PlayerController : MonoBehaviour
         if(inputAxis != Vector3.zero)
         {
             time += Time.deltaTime;
+            counter = 0;
         }
         
         if(time > 0.35f)
@@ -55,23 +61,79 @@ public class PlayerController : MonoBehaviour
         // 入力がないときに、操作パネルを表示
         if(inputAxis == Vector3.zero)
         {
-            DOVirtual.DelayedCall(1.0f,
-            () => { UIManager.instance.operationPanel.SetActive(true); });
-            //UIManager.instance.operationPanel.SetActive(true);
+            counter += Time.deltaTime;
+            if(counter >= maxCounter) 
+            {
+                counter = maxCounter;
+                UIManager.instance.operationPanel.SetActive(true);
+            }
         }
-        else
+        else if (inputAxis != Vector3.zero
+            && UIManager.instance.operationPanel.activeSelf)
         {
-            UIManager.instance.operationPanel.SetActive(false);
+            DOVirtual.DelayedCall(1.0f,
+           () => { UIManager.instance.operationPanel.SetActive(false); });
         }
     }
 
     private void FixedUpdate()
     {
         inputAxis.Normalize();
-        rb.AddForce(inputAxis * -moveSpeed * moveForceMultiplier);
+        rb.AddForce(-inputAxis * moveSpeed * moveForceMultiplier);
+        // 速度の上限を設定
+        float maxSpeedX = 10.0f;
+        float maxSpeedZ = 10.0f;
+        
+        if(onIceFloor)
+        {
+            // 氷の床の上にいるときの速度
+            maxSpeedX = 25.0f;
+            maxSpeedZ = 25.0f;
+        }
+        else
+        {
+
+            maxSpeedX = 10.0f;
+            maxSpeedZ = 10.0f;
+        }
+        // 速度上限を超えた際の処理
+        if(rb.velocity.x >= maxSpeedX)
+        {
+            rb.velocity = new Vector3(maxSpeedX, rb.velocity.y, rb.velocity.z);
+        }
+        if (rb.velocity.z >= maxSpeedZ)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeedZ);
+        }
+
+        if (rb.velocity.x <= -maxSpeedX)
+        {
+            rb.velocity = new Vector3(-maxSpeedX, rb.velocity.y, rb.velocity.z);
+        }
+        if (rb.velocity.z <= -maxSpeedZ)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -maxSpeedZ);
+        }
 
         // 進行方向に回転させる
         moveDirection = -inputAxis;
         transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * 10.0f);
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "IceFloor")
+        {
+            onIceFloor = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "IceFloor")
+        {
+            onIceFloor = false;
+        }
+    }
+
 }
