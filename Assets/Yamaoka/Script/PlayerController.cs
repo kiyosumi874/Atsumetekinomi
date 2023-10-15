@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,7 +55,9 @@ public class PlayerController : MonoBehaviour
         // 入力がないときに、操作パネルを表示
         if(inputAxis == Vector3.zero)
         {
-            UIManager.instance.operationPanel.SetActive(true);
+            DOVirtual.DelayedCall(1.0f,
+            () => { UIManager.instance.operationPanel.SetActive(true); });
+            //UIManager.instance.operationPanel.SetActive(true);
         }
         else
         {

@@ -260,6 +260,7 @@ public class KinomiManager : MonoBehaviour
 
         if(nowKinomiNum >= maxKinomiNum)
         {
+            UIManager.instance.ShowGetOverKinomiUI();
             nowKinomiNum = maxKinomiNum;
         }
     }
