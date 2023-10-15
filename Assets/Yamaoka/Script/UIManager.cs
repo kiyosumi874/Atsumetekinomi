@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     public List<ComboUIData> comboUIDataList = new List<ComboUIData>();
 
     public static UIManager instance;   // インスタンス
-
+    // 時間表示テキスト
     public Text countDownText;
     public Text gameTimeText;
 
@@ -41,12 +41,16 @@ public class UIManager : MonoBehaviour
 
     // 操作パネル
     public GameObject operationPanel;
+    // 木の実を持てないときのUI
+    public GameObject getOverKinomiUI;
 
     private void Awake()
     {
         instance = this;
         //InitComboUI();
         countDownText.enabled = false;
+        getOverKinomiUI.SetActive(false);
+        operationPanel.SetActive(false);
     }
 
     /// <summary>
@@ -201,5 +205,17 @@ public class UIManager : MonoBehaviour
                 watermelonImgs[i].color = hasNotKinomi;
             }
         }
+    }
+
+    public void ShowGetOverKinomiUI()
+    {
+        getOverKinomiUI.SetActive(true);
+        DOVirtual.DelayedCall(1.0f,
+            () => { getOverKinomiUI.SetActive(false); });
+        //RectTransform rectTransform = getOverKinomiUI.GetComponent<RectTransform>();
+
+        //rectTransform.DOAnchorPos(
+        //    new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y + 200), 1.0f)
+        //    .SetEase(Ease.OutBack);
     }
 }
