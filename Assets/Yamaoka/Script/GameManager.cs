@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.AfterGame:
                 score = ResultScore();
-                SceneChanger.Instance.LoadSceneFaded("TestResult");
+                SceneChanger.Instance.LoadSceneFaded("Ranking");
                 break;
             case GameState.None:
                 // ŠeŠÔ‚ğ‰Šú‰»‚·‚é
