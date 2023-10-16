@@ -12,6 +12,8 @@ public class Title : MonoBehaviour
     void Start()
     {
         prevSelectedGameObject = EventSystem.current.firstSelectedGameObject;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     void Update()
     {
