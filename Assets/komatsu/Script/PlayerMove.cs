@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -8,16 +10,18 @@ public class PlayerMove : MonoBehaviour
     //変数宣言
 
     //移動関連
-    private Rigidbody rigidbody;            //リジッドボディ
-    private Vector3 direction_vector;       //移動方向のベクトル
-    public const float MOVESPEED = 5.0f;   //移動速度
+    private Rigidbody rigidbody;                 //リジッドボディ
+    private Vector3 direction_vector;            //移動方向のベクトル
+    public const float MOVESPEED = 5.0f;         //移動速度
 
     //アニメーション関連
-    private Animator animator;  //アニメーター
-    private bool isMove;        //今動いているかどうか
+    private Animator animator;                  //アニメーター
+    private bool isMove;                        //今動いているかどうか
 
     //角度関連
-    float round = 0;
+    Vector3 prev_position;                      //前フレームの座標
+    public const float ROTATE_SPEED = 10.0f;    //回転する速さ
+    
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +63,6 @@ public class PlayerMove : MonoBehaviour
             vector.z = -1;
             isMove = true;
         }
-
         //正規化して移動量をかける
         vector.Normalize();
         direction_vector = vector * MOVESPEED;
@@ -76,24 +79,14 @@ public class PlayerMove : MonoBehaviour
         }
 
         //角度制御
-        //TODO：左方向に入力すると回転が上手くいかない。修正すること
-        //Transform transform = this.transform;
-        //Vector3 local_angle = transform.localEulerAngles;
-        ////動いているなら回転分を計算
-        //if(isMove)
-        //{
-        //    round = Mathf.Atan2(vector.x, vector.z) * Mathf.Rad2Deg;
-        //}
-        
-        //Debug.Log(round);
-        //if(local_angle.y > round)
-        //{
-        //    local_angle.y -= 1.0f;
-        //}
-        //else if(local_angle.y < round)
-        //{
-        //    local_angle.y += 1.0f;
-        //}
-        //transform.eulerAngles = local_angle;
+        //移動量を計算する
+        Vector3 current_potision = transform.position;
+        Vector3 delta_movement = current_potision - prev_position;
+        prev_position = current_potision;
+        //移動中なら少しずつ回転させる
+        if (isMove)
+        {
+            transform.forward = Vector3.Slerp(transform.forward, delta_movement, Time.deltaTime * ROTATE_SPEED);
+        }
     }
 }
