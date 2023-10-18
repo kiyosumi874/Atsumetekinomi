@@ -256,7 +256,10 @@ public class KinomiManager : MonoBehaviour
             {
                 watermelonNum++;
             }
+            ChangeImage.instance.ChangeMyKinomiImage(nowKinomiNum, kinomiName);
         }
+
+       // ChangeImage.instance.ChangeMyKinomiImage(nowKinomiNum, kinomiName);
 
         if(nowKinomiNum >= maxKinomiNum)
         {
@@ -274,13 +277,57 @@ public class KinomiManager : MonoBehaviour
     {
         if(playerKinomiDataList.Count - 1 > 0)
         {
+            //playerKinomiDataList.RemoveAt(playerKinomiDataList.Count - 1);
+            //Debug.Log(playerKinomiDataList.Count + "を削除");
+            //ChangeImage.instance.ResetLastKinomiImage(playerKinomiDataList.Count - 1);
+            switch (playerKinomiDataList[playerKinomiDataList.Count - 1].name)
+            {
+                case "リンゴ":
+                    appleNum--;
+                    break;
+                case "レモン":
+                    lemonNum--;
+                    break;
+                case "バナナ":
+                    bananaNum--;
+                    break;
+                case "オレンジ":
+                    orengeNum--;
+                    break;
+                case "スイカ":
+                    watermelonNum--;
+                    break;
+            }
             playerKinomiDataList.RemoveAt(playerKinomiDataList.Count - 1);
             Debug.Log(playerKinomiDataList.Count + "を削除");
+            ChangeImage.instance.ResetLastKinomiImage(playerKinomiDataList.Count);
         }
-        else if(playerKinomiDataList.Count - 1 <= 0)
+        else if(playerKinomiDataList.Count - 1 == 0)
         {
+            //playerKinomiDataList.RemoveAt(0);
+            //Debug.Log(playerKinomiDataList.Count+ "を削除 0000");
+            //ChangeImage.instance.ResetLastKinomiImage(0);
+            switch (playerKinomiDataList[0].name)
+            {
+                case "リンゴ":
+                    appleNum--;
+                    break;
+                case "レモン":
+                    lemonNum--;
+                    break;
+                case "バナナ":
+                    bananaNum--;
+                    break;
+                case "オレンジ":
+                    orengeNum--;
+                    break;
+                case "スイカ":
+                    watermelonNum--;
+                    break;
+            }
             playerKinomiDataList.RemoveAt(0);
-            Debug.Log(playerKinomiDataList.Count+ "を削除 0000");
+            Debug.Log(playerKinomiDataList.Count + "を削除 0000");
+            ChangeImage.instance.ResetLastKinomiImage(0);
         }
     }
 
@@ -291,7 +338,6 @@ public class KinomiManager : MonoBehaviour
     {
         // 所持している木の実のデータをクリア
         playerKinomiDataList.Clear();
-
         nowKinomiNum = 0;
         appleNum = 0;
         orengeNum = 0;

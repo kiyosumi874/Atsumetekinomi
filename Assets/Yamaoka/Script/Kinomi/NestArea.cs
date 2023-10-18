@@ -14,6 +14,7 @@ public class NestArea : MonoBehaviour
         {
             ComboManager.instance.UseCombo();
             //KinomiManager.instance.LostAllKinomi();
+            ChangeImage.instance.ResetMyKinomiImage();
         }
     }
 }
