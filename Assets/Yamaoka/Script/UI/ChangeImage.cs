@@ -69,6 +69,11 @@ public class ChangeImage : MonoBehaviour
 
     public void ResetLastKinomiImage(int lastNum)
     {
+        Debug.Log(lastNum + "Lastttt");
+        if (lastNum > 10)
+        {
+            return;
+        }
         images[lastNum].sprite = null;
     }
 }
