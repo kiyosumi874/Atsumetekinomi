@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
     public float moveSpeed = 15.0f;
+    public float dashSpeed = 200.0f;
     private float tempMoveSpeed;
     private Vector3 inputAxis;
     public float moveForceMultiplier;    // 移動速度の入力に対する追従度
@@ -18,11 +19,13 @@ public class PlayerController : MonoBehaviour
     public Transform backPos;
 
     public float time = 0;
+    public float dashTime = 0;
 
     public double counter = 0;
     public double maxCounter = 5;
 
     public bool onIceFloor = false;     // 氷の床の上にいるかどうか
+    public bool isDash = false;
 
     private void Start()
     {
@@ -32,6 +35,27 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // 木の実を捨てて、ダッシュする処理
+        if(Input.GetKeyDown(KeyCode.G)
+            && KinomiManager.instance.nowKinomiNum > 0)
+        {
+            KinomiManager.instance.LostKinomi();
+            moveSpeed = dashSpeed;
+            isDash = true;
+        }
+
+        if(isDash)
+        {
+            dashTime += Time.deltaTime;
+        }
+
+        if(dashTime > 1.0f)
+        {
+            dashTime = 0.0f;
+            moveSpeed = tempMoveSpeed;
+            isDash = false;
+        }
+
         inputAxis.x = Input.GetAxis("Horizontal");
         inputAxis.z = Input.GetAxis("Vertical");
 
@@ -49,17 +73,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // GameStateに応じて、プレイヤーの行動を制限する
-        if(GameManager.instance.gameState != GameState.InGame)
+        if (GameManager.instance.gameState != GameState.InGame)
         {
-            moveSpeed = 0;
-        }
-        else
-        {
-            moveSpeed = tempMoveSpeed;
+            inputAxis = Vector3.zero;
         }
 
         // 入力がないときに、操作パネルを表示
-        if(inputAxis == Vector3.zero)
+        if (inputAxis == Vector3.zero)
         {
             counter += Time.deltaTime;
             if(counter >= maxCounter) 
@@ -92,10 +112,16 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-
             maxSpeedX = 10.0f;
             maxSpeedZ = 10.0f;
         }
+
+        if(isDash)
+        {
+            maxSpeedX = 30.0f;
+            maxSpeedZ = 30.0f;
+        }
+
         // 速度上限を超えた際の処理
         if(rb.velocity.x >= maxSpeedX)
         {

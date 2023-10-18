@@ -270,46 +270,17 @@ public class KinomiManager : MonoBehaviour
     /// </summary>
     /// <param name="kinomiID">木の実のID</param>
     /// <param name="count">ロストする個数</param>
-    public void LostKinomi(string kinomiName, int count)
+    public void LostKinomi(/*string kinomiName, int count*/)
     {
-        // List内を検索
-        foreach (KinomiData data in playerKinomiDataList)
+        if(playerKinomiDataList.Count - 1 > 0)
         {
-            if(data.name == kinomiName)
-            {
-                data.CountDown(count);
-
-                playerKinomiDataList.Remove(data);
-
-                if (kinomiName == "リンゴ")
-                {
-                    appleNum -= count;
-                }
-                else if (kinomiName == "オレンジ")
-                {
-                    orengeNum -= count;
-                }
-                else if (kinomiName == "バナナ")
-                {
-                    bananaNum -= count;
-                }
-                else if (kinomiName == "レモン")
-                {
-                    lemonNum -= count;
-                }
-                else if (kinomiName == "スイカ")
-                {
-                    watermelonNum -= count;
-                }
-                //nowKinomiNum -= count;
-                Debug.Log(data.name + "を " + count + "個ロスト");
-                Debug.Log("持っている木の実の数：" + playerKinomiDataList.Count);
-                break;
-            }
-            else
-            {
-                Debug.Log(kinomiName + "を所持していません");
-            }
+            playerKinomiDataList.RemoveAt(playerKinomiDataList.Count - 1);
+            Debug.Log(playerKinomiDataList.Count + "を削除");
+        }
+        else if(playerKinomiDataList.Count - 1 <= 0)
+        {
+            playerKinomiDataList.RemoveAt(0);
+            Debug.Log(playerKinomiDataList.Count+ "を削除 0000");
         }
     }
 

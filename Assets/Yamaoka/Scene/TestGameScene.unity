@@ -3338,7 +3338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &489663808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16447,9 +16447,11 @@ MonoBehaviour:
   frontPos: {fileID: 1650637761}
   backPos: {fileID: 808351385}
   time: 0
+  dashTime: 0
   counter: 3
   maxCounter: 3
   onIceFloor: 0
+  isDash: 0
 --- !u!136 &5936015380046347040
 CapsuleCollider:
   m_ObjectHideFlags: 0
