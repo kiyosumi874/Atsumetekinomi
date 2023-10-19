@@ -58,11 +58,11 @@ public class KinomiManager : MonoBehaviour
     private List<Kinomi> kinomis = new List<Kinomi>();
 
     public Text allKinomiNumText;
-    public Text appleNumText;
-    public Text orengeNumText;
-    public Text bananaNumText;
-    public Text lemonNumText;
-    public Text watermelonNumText;
+    //public Text appleNumText;
+    //public Text orengeNumText;
+    //public Text bananaNumText;
+    //public Text lemonNumText;
+    //public Text watermelonNumText;
 
     public int nowKinomiNum = 0;    // ¡‚Á‚Ä‚¢‚é–Ø‚ÌÀ‚Ì‡Œv”
     public int maxKinomiNum = 10;   // Š‚Å‚«‚é–Ø‚ÌÀ‚ÌÅ‘å”
@@ -100,11 +100,11 @@ public class KinomiManager : MonoBehaviour
         CheckHasKinomi();
         SetMinAllKinomisNum();
         allKinomiNumText.text = nowKinomiNum.ToString();
-        appleNumText.text = "x" + appleNum.ToString();
-        orengeNumText.text = "x" + orengeNum.ToString();
-        bananaNumText.text = "x" + bananaNum.ToString();
-        lemonNumText.text = "x" + lemonNum.ToString();
-        watermelonNumText.text = "x" + watermelonNum.ToString();
+        //appleNumText.text = "x" + appleNum.ToString();
+        //orengeNumText.text = "x" + orengeNum.ToString();
+        //bananaNumText.text = "x" + bananaNum.ToString();
+        //lemonNumText.text = "x" + lemonNum.ToString();
+        //watermelonNumText.text = "x" + watermelonNum.ToString();
 
         UIManager.instance.ChangeKinomiImgAlpha(hasApple, hasLemon, hasOrenge, hasBanana, hasWatermelon);
     }
