@@ -275,31 +275,7 @@ public class KinomiManager : MonoBehaviour
     /// <param name="count">ロストする個数</param>
     public void LostKinomi(/*string kinomiName, int count*/)
     {
-        //if(playerKinomiDataList.Count == 10)
-        //{
-        //    switch (playerKinomiDataList[9].name)
-        //    {
-        //        case "リンゴ":
-        //            appleNum--;
-        //            break;
-        //        case "レモン":
-        //            lemonNum--;
-        //            break;
-        //        case "バナナ":
-        //            bananaNum--;
-        //            break;
-        //        case "オレンジ":
-        //            orengeNum--;
-        //            break;
-        //        case "スイカ":
-        //            watermelonNum--;
-        //            break;
-        //    }
-        //    playerKinomiDataList.RemoveAt(9);
-        //    //Debug.Log(playerKinomiDataList[9].name + "を削除");
-        //    ChangeImage.instance.ResetLastKinomiImage(9);
-        //}
-
+        
         if(playerKinomiDataList.Count - 1 > 0)
         {
             //playerKinomiDataList.RemoveAt(playerKinomiDataList.Count - 1);
@@ -327,7 +303,7 @@ public class KinomiManager : MonoBehaviour
             //Debug.Log(playerKinomiDataList.Count + "を削除");
             ChangeImage.instance.ResetLastKinomiImage(playerKinomiDataList.Count);
         }
-        else if(playerKinomiDataList.Count - 1 == 0)
+        else if(playerKinomiDataList.Count == 1)
         {
             //playerKinomiDataList.RemoveAt(0);
             //Debug.Log(playerKinomiDataList.Count+ "を削除 0000");
