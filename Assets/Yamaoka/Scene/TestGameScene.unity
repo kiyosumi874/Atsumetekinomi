@@ -1988,7 +1988,7 @@ MonoBehaviour:
     firstComboScore: 500
     normalComboScore: 100
     comboLevel: 1
-    comboLvUpCount: 5
+    comboLvUpCount: 3
     isFrist: 1
     useCombo: 0
     useAppleNum: 1
@@ -2001,7 +2001,7 @@ MonoBehaviour:
     firstComboScore: 750
     normalComboScore: 250
     comboLevel: 1
-    comboLvUpCount: 5
+    comboLvUpCount: 3
     isFrist: 1
     useCombo: 0
     useAppleNum: 1
@@ -2014,7 +2014,7 @@ MonoBehaviour:
     firstComboScore: 600
     normalComboScore: 200
     comboLevel: 1
-    comboLvUpCount: 5
+    comboLvUpCount: 3
     isFrist: 1
     useCombo: 0
     useAppleNum: 0
@@ -2027,7 +2027,7 @@ MonoBehaviour:
     firstComboScore: 800
     normalComboScore: 300
     comboLevel: 1
-    comboLvUpCount: 5
+    comboLvUpCount: 3
     isFrist: 1
     useCombo: 0
     useAppleNum: 0
@@ -2040,7 +2040,7 @@ MonoBehaviour:
     firstComboScore: 3000
     normalComboScore: 1000
     comboLevel: 1
-    comboLvUpCount: 5
+    comboLvUpCount: 3
     isFrist: 1
     useCombo: 0
     useAppleNum: 1
@@ -2053,7 +2053,7 @@ MonoBehaviour:
     firstComboScore: 5000
     normalComboScore: 2500
     comboLevel: 1
-    comboLvUpCount: 5
+    comboLvUpCount: 3
     isFrist: 1
     useCombo: 0
     useAppleNum: 1
