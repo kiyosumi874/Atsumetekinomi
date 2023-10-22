@@ -27,10 +27,13 @@ public class PlayerController : MonoBehaviour
     public bool onIceFloor = false;     // 氷の床の上にいるかどうか
     public bool isDash = false;
 
+    public ParticleSystem dashParticle; // ダッシュ時のエフェクト
+
     private void Start()
     {
         this.rb = GetComponent<Rigidbody>();
         tempMoveSpeed = moveSpeed;
+        dashParticle.Stop();
     }
 
     private void Update()
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
         if(isDash)
         {
             dashTime += Time.deltaTime;
+            dashParticle.Play();
         }
 
         if(dashTime > 1.0f)
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour
             dashTime = 0.0f;
             moveSpeed = tempMoveSpeed;
             isDash = false;
+            dashParticle.Stop();
         }
 
         inputAxis.x = Input.GetAxis("Horizontal");

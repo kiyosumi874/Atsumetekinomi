@@ -274,8 +274,7 @@ public class KinomiManager : MonoBehaviour
     /// <param name="kinomiID">–Ø‚ÌÀ‚ÌID</param>
     /// <param name="count">ƒƒXƒg‚·‚éŒÂ”</param>
     public void LostKinomi(/*string kinomiName, int count*/)
-    {
-        
+    {   
         if(playerKinomiDataList.Count - 1 > 0)
         {
             //playerKinomiDataList.RemoveAt(playerKinomiDataList.Count - 1);

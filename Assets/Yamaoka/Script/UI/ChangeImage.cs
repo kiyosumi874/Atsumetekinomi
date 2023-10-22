@@ -70,7 +70,7 @@ public class ChangeImage : MonoBehaviour
     /// <param name="lastNum"></param>
     public void ResetLastKinomiImage(int lastNum)
     {
-        //Debug.Log(lastNum + "Lastttt");
+        Debug.Log(lastNum + "Lastttt");
         if (lastNum > 10)
         {
             return;
