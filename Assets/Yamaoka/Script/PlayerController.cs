@@ -39,13 +39,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // 木の実を捨てて、ダッシュする処理
-        if(Input.GetKeyDown(KeyCode.G)
-            && KinomiManager.instance.nowKinomiNum > 0
-            && !isDash)
+        if(!isDash && KinomiManager.instance.nowKinomiNum > 0)
         {
-            KinomiManager.instance.LostKinomi();
-            moveSpeed = dashSpeed;
-            isDash = true;
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+                KinomiManager.instance.LostKinomi();
+                moveSpeed = dashSpeed;
+                isDash = true;
+            }
         }
 
         if(isDash)
