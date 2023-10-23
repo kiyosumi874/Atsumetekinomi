@@ -31,6 +31,6 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaMask: 0.1
-    - _Flip: 1
+    - _Flip: 0.91
     m_Colors: []
   m_BuildTextureStacks: []
