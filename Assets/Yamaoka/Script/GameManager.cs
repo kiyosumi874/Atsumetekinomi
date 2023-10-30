@@ -51,7 +51,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(gameState)
+        if (SceneManager.GetActiveScene().name == "Title")
+        {
+            ChangeGameState(GameState.None);
+        }
+
+        switch (gameState)
         {
             case GameState.BeforeGame:
                 // ƒXƒRƒA‚ğ‰Šú‰»‚·‚é

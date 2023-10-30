@@ -49,5 +49,11 @@ public class Kinomi : MonoBehaviour
             KinomiGenerator.instance.nowKinomiNum--;
             Destroy(this.gameObject);
         }
+
+        if(collision.gameObject.tag == "Kinomi")
+        {
+            KinomiGenerator.instance.nowKinomiNum--;
+            Destroy(this.gameObject);
+        }
     }
 }

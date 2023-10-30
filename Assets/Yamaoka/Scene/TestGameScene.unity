@@ -597,7 +597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 599.14, y: -801}
+  m_AnchoredPosition: {x: 625, y: -801}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109123540
@@ -1324,7 +1324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -577, y: 113}
+  m_AnchoredPosition: {x: -556, y: 113}
   m_SizeDelta: {x: 447, y: 413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214385125
@@ -2686,7 +2686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -576.26996, y: -737}
+  m_AnchoredPosition: {x: -555.27, y: -737}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &438204124
@@ -4650,7 +4650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 568, y: -661.08997}
+  m_AnchoredPosition: {x: 593.86, y: -661.08997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &798472562
@@ -4686,7 +4686,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u304D\u306E\u307F\u30C0\u30C3\u30B7\u30E5\n\u304D\u306E\u307F\u3092\u6301\u3063\u305F\u72B6\u614B\u3067
+  m_Text: "\u304D\u306E\u307F\u30C0\u30C3\u30B7\u30E5\n   \u304D\u306E\u307F\u3092\u6301\u3063\u305F\u72B6\u614B\u3067
     [G] \u30AD\u30FC"
 --- !u!222 &798472563
 CanvasRenderer:
@@ -5171,7 +5171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 578.14, y: 114}
+  m_AnchoredPosition: {x: 604, y: 114}
   m_SizeDelta: {x: 447, y: 413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898195903
@@ -5582,7 +5582,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Titletest
+          m_StringArgument: Title
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1477264648}
@@ -13196,7 +13196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -582, y: -808}
+  m_AnchoredPosition: {x: -561.00006, y: -808}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565619997
@@ -14530,7 +14530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -579, y: -678.36}
+  m_AnchoredPosition: {x: -558.00006, y: -678.36}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723483878
@@ -16490,7 +16490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 35.2, y: -731}
+  m_AnchoredPosition: {x: 25, y: -741}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2055265048
@@ -16526,7 +16526,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30DC\u30BF\u30F3"
+  m_Text: "\u30DC\u30BF\u30F3\u64CD\u4F5C"
 --- !u!222 &2055265049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16903,7 +16903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 20.199905, y: -798.5}
+  m_AnchoredPosition: {x: -106.100006, y: -808.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106136256
@@ -16933,7 +16933,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 300
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
