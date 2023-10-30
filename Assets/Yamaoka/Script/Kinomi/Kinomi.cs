@@ -24,6 +24,7 @@ public class Kinomi : MonoBehaviour
     public int score = 50;
 
     public static Kinomi instance;
+    public ParticleSystem effect;
 
     private void Awake()
     {
@@ -45,6 +46,8 @@ public class Kinomi : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            //effect.Play();
+            EffectManager.instance.PlayEffect(this.transform, effect.startColor);
             KinomiManager.instance.CountItem(kinomiName, 1);
             KinomiGenerator.instance.nowKinomiNum--;
             Destroy(this.gameObject);
@@ -52,6 +55,8 @@ public class Kinomi : MonoBehaviour
 
         if(collision.gameObject.tag == "Kinomi")
         {
+            //effect.Play();
+            EffectManager.instance.PlayEffect(this.transform, effect.startColor);
             KinomiGenerator.instance.nowKinomiNum--;
             Destroy(this.gameObject);
         }
