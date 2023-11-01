@@ -6236,7 +6236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 0.8018906, b: 0, a: 1}
+  m_EffectColor: {r: 1, g: 0.9263606, b: 0, a: 1}
   m_EffectDistance: {x: 20, y: -20}
   m_UseGraphicAlpha: 1
 --- !u!1 &1014846933
@@ -11693,8 +11693,8 @@ GameObject:
   - component: {fileID: 1084360122}
   - component: {fileID: 1084360124}
   - component: {fileID: 1084360123}
-  - component: {fileID: 1084360125}
   - component: {fileID: 1084360127}
+  - component: {fileID: 1084360125}
   - component: {fileID: 1084360126}
   m_Layer: 5
   m_Name: Combo
@@ -15760,7 +15760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 0.8018906, b: 0, a: 1}
+  m_EffectColor: {r: 1, g: 0.9254902, b: 0, a: 1}
   m_EffectDistance: {x: 20, y: -20}
   m_UseGraphicAlpha: 1
 --- !u!1 &1975560097
