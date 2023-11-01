@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TitleOption : MonoBehaviour
 {
     [SerializeField] ActivateButtonCopy activateButton;
     [SerializeField] AudioSource clickSound;
     [SerializeField] AudioSource moveSound;
+    [SerializeField] List<Image> images;
     [SerializeField] GameObject leftArrow;
     [SerializeField] GameObject rightArrow;
     [SerializeField] int maxPageNum = 2;
@@ -64,6 +66,18 @@ public class TitleOption : MonoBehaviour
 
         if (isChangePage)
         {
+            int count = 1;
+            foreach (var item in images)
+            {
+                if (count++ == currentPageNum)
+                {
+                    item.gameObject.SetActive(true);
+                }
+                else
+                {
+                    item.gameObject.SetActive(false);
+                }
+            }
             switch (currentPageType)
             {
                 case PageType.Front:
