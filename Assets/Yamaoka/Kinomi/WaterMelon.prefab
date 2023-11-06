@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinomiName: "\u30B9\u30A4\u30AB"
   generatLocation: 2
-  score: 100
+  score: 50
   effect: {fileID: 5853340040388031109}
 --- !u!1001 &494418836332957270
 PrefabInstance:
