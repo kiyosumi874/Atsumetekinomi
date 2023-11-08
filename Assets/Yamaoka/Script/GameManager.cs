@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
                 // 各時間を初期化する
                 gameStartCountDownSeconds = startCountDownTime;
                 countDownSeconds = gameTime;
+                // スコアを初期化する
+                score = 0;
                 // 現在のシーンがゲームシーンの時
                 if (SceneManager.GetActiveScene().name == "TestGameScene")
                 {

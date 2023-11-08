@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8645891307123268321}
   m_Layer: 0
   m_Name: Banana
-  m_TagString: Untagged
+  m_TagString: Kinomi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
