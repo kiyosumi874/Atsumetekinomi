@@ -8,6 +8,8 @@ public class ResultSceneManager : MonoBehaviour
 {
     [SerializeField]
     private Text scoreText;     // 獲得したスコアを表示
+    [SerializeField]
+    private ParticleSystem crackerEffect;
 
 
     string[] ranking = { "1位", "2位", "3位", "4位", "5位" };
@@ -20,7 +22,7 @@ public class ResultSceneManager : MonoBehaviour
     void Start()
     {
         GameManager.instance.ChangeGameState(GameState.None);
-
+        crackerEffect.Stop();
         GetRanking();
         SetRanking(GameManager.instance.score);
 
@@ -58,6 +60,8 @@ public class ResultSceneManager : MonoBehaviour
                 var change = rankingValue[i];
                 rankingValue[i] = score;
                 score = change;
+
+                crackerEffect.Play();
             }
         }
         // 入れ替えた値を保存
