@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Kiyosumi/Scenes/Title.unity
-    guid: c9375309bda428c4297aae35badd3827
+    path: Assets/Kiyosumi/Scenes/TitleTest.unity
+    guid: 39664fd39c74d5e4b839caefcd150d6d
   - enabled: 1
     path: Assets/Yamaoka/Scene/TestGameScene.unity
     guid: 0981d08fd543de949af9ba77b621adbc
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Yamaoka/Scene/Titletest.unity
     guid: 9ee6bdb5f537d6c408a25f8821781bda
+  - enabled: 0
+    path: Assets/Kiyosumi/Scenes/Title.unity
+    guid: c9375309bda428c4297aae35badd3827
   - enabled: 0
     path: Assets/Yamaoka/Scene/TestResult.unity
     guid: 3f44d089e69a2624c948ea84f05b1a40
