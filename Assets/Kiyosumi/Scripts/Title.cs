@@ -20,6 +20,8 @@ public class Title : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 #if UNITY_EDITOR
+            // 保存しているランキングデータを削除する
+            PlayerPrefs.DeleteAll();
             UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
